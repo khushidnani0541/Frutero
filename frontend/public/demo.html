@@ -1,0 +1,1205 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>html,body{height:100%;margin:0}</style></head><body><title>Frutero Pottsville Plant</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap">
+<style>
+/* Layout: a navy rail on the left, a light working surface on the right; one accent blue, semantic colours for state. */
+:root {
+  --bg: #EEF2F8; --panel: #FFFFFF; --panel2: #F6F8FC; --line: #D5DDE9; --line-soft: #E6EBF3;
+  --ink: #132335; --body: #3E5266; --muted: #7A8BA1; --faint: #A3B1C4;
+  --rail: #132335; --rail2: #1B2E45; --rail-ink: #C9D5E6; --rail-dim: #7E92AC;
+  --accent: #1655F2; --accent-ink: #0F3FBF; --accent-soft: #E6EDFF; --accent-line: #B9CBFF;
+  --good: #1E8A6E; --good-bg: #E3F5EE; --warn: #B7791F; --warn-bg: #FFF3DD; --bad: #C43D3D; --bad-bg: #FDE9E9;
+  --violet: #6541C4; --violet-bg: #EFEAFB; --lime: #B4FF6B; --teal: #0E7C86; --teal-bg: #E1F3F5;
+  --grid: #E3E9F2; --shadow: 0 1px 2px rgba(19,35,53,.06), 0 8px 24px -12px rgba(19,35,53,.18);
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Manrope", "Inter", system-ui, sans-serif;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1826; --panel: #162233; --panel2: #1B2940; --line: #2A3A50; --line-soft: #233247;
+    --ink: #E9EFF8; --body: #B9C7DA; --muted: #7F91A8; --faint: #5E7089;
+    --rail: #0B1420; --rail2: #132335; --rail-ink: #B9C7DA; --rail-dim: #6E819B;
+    --accent: #5B86FF; --accent-ink: #8FAAFF; --accent-soft: #1E2F52; --accent-line: #2F4A80;
+    --good: #3FBF95; --good-bg: #163A30; --warn: #E0A23E; --warn-bg: #3E2E12; --bad: #F07171; --bad-bg: #4A1F1F;
+    --violet: #A08CFF; --violet-bg: #2A2350; --teal: #4FC3CF; --teal-bg: #123A3F;
+    --grid: #243247; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1826; --panel: #162233; --panel2: #1B2940; --line: #2A3A50; --line-soft: #233247;
+  --ink: #E9EFF8; --body: #B9C7DA; --muted: #7F91A8; --faint: #5E7089;
+  --rail: #0B1420; --rail2: #132335; --rail-ink: #B9C7DA; --rail-dim: #6E819B;
+  --accent: #5B86FF; --accent-ink: #8FAAFF; --accent-soft: #1E2F52; --accent-line: #2F4A80;
+  --good: #3FBF95; --good-bg: #163A30; --warn: #E0A23E; --warn-bg: #3E2E12; --bad: #F07171; --bad-bg: #4A1F1F;
+  --violet: #A08CFF; --violet-bg: #2A2350; --teal: #4FC3CF; --teal-bg: #123A3F;
+  --grid: #243247; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 13px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- shell ---------- */
+.app { display: grid; grid-template-columns: 232px minmax(0, 1fr); height: 100%; }
+.rail { background: var(--rail); color: var(--rail-ink); display: flex; flex-direction: column; padding: 14px 12px; padding-left: max(12px, env(safe-area-inset-left, 0px)); gap: 6px; overflow-y: auto; }
+.rail .brand { display: flex; align-items: center; gap: 10px; padding: 6px 8px 14px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 8px; }
+.rail .brand .lg { width: 30px; height: 30px; border-radius: 8px; background: var(--accent); display: grid; place-items: center; color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 14px; letter-spacing: -.02em; }
+.rail .brand b { display: block; color: #fff; font-family: var(--font-display); font-size: 14px; line-height: 1.15; }
+.rail .brand span { display: block; font-size: 10.5px; color: var(--rail-dim); }
+.rail .sec { font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--rail-dim); padding: 10px 10px 4px; }
+.rail .nav { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: 0; background: transparent; color: var(--rail-ink); padding: 8px 10px; border-radius: 8px; font-weight: 600; font-size: 12.5px; }
+.rail .nav i { width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; font-style: normal; font-size: 10px; font-weight: 800; background: rgba(255,255,255,.08); color: #fff; flex: none; }
+.rail .nav small { margin-left: auto; font-size: 10px; font-weight: 700; color: var(--rail-dim); }
+.rail .nav:hover { background: rgba(255,255,255,.06); color: #fff; }
+.rail .nav.on { background: rgba(255,255,255,.12); color: #fff; }
+.rail .nav.on i { background: var(--accent); }
+.rail .nav .pri { font-size: 9.5px; font-weight: 800; color: var(--lime); margin-left: auto; letter-spacing: .04em; }
+.rail .foot { margin-top: auto; padding: 10px; font-size: 10.5px; color: var(--rail-dim); line-height: 1.4; border-top: 1px solid rgba(255,255,255,.08); }
+.rail .foot b { color: var(--rail-ink); }
+
+.main { display: flex; flex-direction: column; min-width: 0; height: 100%; overflow: hidden; }
+.top { display: flex; align-items: center; gap: 12px; padding: 10px 20px; padding-right: max(20px, env(safe-area-inset-right, 0px)); background: var(--panel); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.top .crumb { font-family: var(--font-display); font-weight: 800; font-size: 15px; letter-spacing: -.01em; }
+.top .crumb span { color: var(--muted); font-weight: 600; }
+.top .clock { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 12.5px; color: var(--body); display: flex; align-items: center; gap: 8px; }
+.top .clock i { width: 8px; height: 8px; border-radius: 50%; background: var(--good); display: inline-block; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+.top .spacer { flex: 1; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 700; letter-spacing: .02em; border: 1px solid var(--line); color: var(--body); background: var(--panel2); white-space: nowrap; }
+.chip.sample { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 40%, transparent); background: var(--warn-bg); }
+.chip.alert { color: var(--bad); border-color: color-mix(in srgb, var(--bad) 40%, transparent); background: var(--bad-bg); }
+.btn { border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 6px 11px; border-radius: 8px; font-weight: 600; font-size: 12px; }
+.btn:hover { border-color: var(--accent-line); background: var(--accent-soft); }
+.btn.pri { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.pri:hover { background: var(--accent-ink); }
+.btn.sm { padding: 3px 8px; font-size: 11px; }
+.btn.ghost { background: transparent; }
+
+.content { flex: 1; overflow-y: auto; padding: 18px 20px 40px; padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.content > .ph { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.ph h1 { font-family: var(--font-display); font-size: 21px; font-weight: 800; letter-spacing: -.02em; margin: 0; line-height: 1.15; text-wrap: balance; }
+.ph p { margin: 2px 0 0; color: var(--muted); font-size: 12.5px; max-width: 70ch; }
+.ph .tools { margin-left: auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel); }
+.seg button { border: 0; background: transparent; padding: 5px 10px; font-size: 11.5px; font-weight: 600; color: var(--muted); }
+.seg button.on { background: var(--accent-soft); color: var(--accent-ink); }
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); margin-bottom: 14px; overflow-x: auto; }
+.tabs button { border: 0; background: transparent; padding: 8px 12px; font-weight: 600; font-size: 12.5px; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tabs button.on { color: var(--accent-ink); border-bottom-color: var(--accent); }
+.tabs button:hover { color: var(--ink); }
+
+/* ---------- grid and cards ---------- */
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 13px 15px; min-width: 0; }
+.card.flat { background: var(--panel2); }
+.card.alert { border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); }
+.c3 { grid-column: span 3; } .c4 { grid-column: span 4; } .c5 { grid-column: span 5; } .c6 { grid-column: span 6; } .c7 { grid-column: span 7; } .c8 { grid-column: span 8; } .c9 { grid-column: span 9; } .c12 { grid-column: span 12; }
+.ch { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.ch h3 { margin: 0; font-size: 12.5px; font-weight: 800; letter-spacing: -.005em; }
+.ch .sub { color: var(--muted); font-size: 11px; }
+.ch .r { margin-left: auto; font-size: 11px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.kpi .l { font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.kpi .v { font-family: var(--font-display); font-size: 26px; font-weight: 800; letter-spacing: -.03em; line-height: 1.1; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.kpi .v small { font-family: var(--font-ui); font-size: 11px; font-weight: 600; color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+.kpi .d { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.kpi .d b { color: var(--ink); }
+.kpi .d.up b { color: var(--good); } .kpi .d.down b { color: var(--bad); }
+.pill { display: inline-block; padding: 2px 7px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.pill.ok { background: var(--good-bg); color: var(--good); } .pill.warn { background: var(--warn-bg); color: var(--warn); } .pill.bad { background: var(--bad-bg); color: var(--bad); } .pill.info { background: var(--accent-soft); color: var(--accent-ink); } .pill.vio { background: var(--violet-bg); color: var(--violet); } .pill.mute { background: var(--panel2); color: var(--muted); border: 1px solid var(--line); } .pill.teal { background: var(--teal-bg); color: var(--teal); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.dot.ok { background: var(--good); } .dot.warn { background: var(--warn); } .dot.bad { background: var(--bad); } .dot.mute { background: var(--faint); } .dot.info { background: var(--accent); }
+
+/* ---------- tables ---------- */
+.tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+.tbl th { text-align: left; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl td { padding: 7px 8px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: 0; }
+.tbl td.n, .tbl th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl td.k { font-weight: 700; color: var(--ink); }
+.tbl td .s { display: block; font-size: 11px; color: var(--muted); margin-top: 1px; }
+.tbl tr.click { cursor: pointer; } .tbl tr.click:hover td { background: var(--panel2); }
+.tbl tr.sel td { background: var(--accent-soft); }
+.scroll { overflow-x: auto; }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) 48px; gap: 0 8px; align-items: center; font-size: 11.5px; color: var(--body); padding: 3px 0; }
+.bar span { grid-column: 1 / -1; display: flex; justify-content: space-between; }
+.bar i { display: block; height: 7px; border-radius: 4px; background: var(--accent); }
+.bar i.warn { background: var(--warn); } .bar i.bad { background: var(--bad); } .bar i.good { background: var(--good); } .bar i.vio { background: var(--violet); }
+.bar b { font-variant-numeric: tabular-nums; text-align: right; color: var(--ink); font-size: 11.5px; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { padding: 7px 0; border-bottom: 1px solid var(--line-soft); display: flex; gap: 10px; align-items: flex-start; }
+.list li:last-child { border-bottom: 0; }
+.list .t { font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 44px; padding-top: 2px; }
+.list .m { flex: 1; min-width: 0; }
+.list .m b { display: block; color: var(--ink); }
+.list .m span { color: var(--muted); font-size: 11.5px; }
+.note { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+.note b { color: var(--ink); }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 12px; }
+.kv span { color: var(--muted); } .kv b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.stack { display: flex; flex-direction: column; gap: 10px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.tile { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: var(--panel); min-width: 0; }
+.tile .l { font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.tile .v { font-family: var(--font-display); font-size: 17px; font-weight: 800; letter-spacing: -.02em; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.tile .v small { font-family: var(--font-ui); font-size: 10.5px; color: var(--muted); font-weight: 600; margin-left: 3px; }
+.tile .d { font-size: 10.5px; color: var(--muted); }
+.tile.ok { border-color: color-mix(in srgb, var(--good) 45%, var(--line)); background: var(--good-bg); }
+.tile.warn { border-color: color-mix(in srgb, var(--warn) 45%, var(--line)); background: var(--warn-bg); }
+.tile.bad { border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); background: var(--bad-bg); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { font-family: var(--font-ui); }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 11px; color: var(--muted); margin-top: 6px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.imgs { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.img { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--panel2); }
+.img svg { width: 100%; height: auto; display: block; }
+.img .cap { padding: 6px 8px; font-size: 11px; color: var(--body); }
+.img .cap b { display: block; color: var(--ink); }
+.img .acts { display: flex; gap: 4px; padding: 0 8px 8px; }
+.img.done { opacity: .55; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.steps > div { padding: 9px 11px; border-left: 1px solid var(--line); background: var(--panel); }
+.steps > div:first-child { border-left: 0; }
+.steps .sn { font-size: 9.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ink); }
+.steps b { display: block; font-size: 12px; margin-top: 2px; }
+.steps p { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
+.steps > div.on { background: var(--accent-soft); }
+.steps > div.done .sn { color: var(--good); }
+.kanban { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.kanban .col { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: 8px; min-height: 120px; }
+.kanban .col h4 { margin: 0 0 8px; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; }
+.wo { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; padding: 8px 9px; margin-bottom: 8px; font-size: 11.5px; }
+.wo b { display: block; font-size: 12px; }
+.wo .meta { color: var(--muted); font-size: 11px; margin-top: 3px; display: flex; gap: 8px; flex-wrap: wrap; }
+.wo select { width: 100%; margin-top: 6px; border: 1px solid var(--line); border-radius: 6px; padding: 3px 6px; background: var(--panel); font-size: 11px; }
+.wo .acts { display: flex; gap: 4px; margin-top: 6px; }
+.insight { border-left: 3px solid var(--accent); background: var(--panel2); border-radius: 0 8px 8px 0; padding: 10px 12px; }
+.insight.warn { border-left-color: var(--warn); } .insight.bad { border-left-color: var(--bad); } .insight.good { border-left-color: var(--good); }
+.insight b { display: block; font-size: 12.5px; }
+.insight p { margin: 3px 0 0; font-size: 11.5px; color: var(--body); }
+.insight .acts { margin-top: 7px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.insight .ev { font-size: 10.5px; color: var(--muted); }
+.gauge { display: flex; align-items: center; gap: 10px; }
+.gauge svg { width: 64px; height: 64px; flex: none; }
+.plan svg { width: 100%; height: auto; display: block; }
+.plan .hot { cursor: pointer; }
+.plan .hot:hover rect, .plan .hot:hover circle { stroke-width: 2; }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.cal .day { border: 1px solid var(--line); border-radius: 8px; padding: 6px; background: var(--panel2); min-height: 92px; }
+.cal .day h5 { margin: 0 0 4px; font-size: 10.5px; color: var(--muted); display: flex; justify-content: space-between; }
+.cal .day.today { border-color: var(--accent); }
+.cal .pm { font-size: 10.5px; background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 3px 5px; margin-bottom: 4px; }
+.cal .pm.due { border-color: var(--warn); background: var(--warn-bg); }
+.cal .pm.done { opacity: .6; text-decoration: line-through; }
+.search { display: flex; gap: 8px; }
+.search input { flex: 1; border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; background: var(--panel); min-width: 0; }
+.ribbon { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 11.5px; color: var(--muted); }
+.ribbon b { color: var(--ink); }
+.flow { display: flex; align-items: stretch; gap: 0; overflow-x: auto; }
+.flow .st { flex: 1; min-width: 110px; border: 1px solid var(--line); background: var(--panel2); padding: 8px 10px; position: relative; }
+.flow .st:first-child { border-radius: 8px 0 0 8px; } .flow .st:last-child { border-radius: 0 8px 8px 0; }
+.flow .st + .st { border-left: 0; }
+.flow .st b { display: block; font-size: 11.5px; }
+.flow .st span { font-size: 10.5px; color: var(--muted); }
+.flow .st.ok { background: var(--good-bg); } .flow .st.warn { background: var(--warn-bg); } .flow .st.bad { background: var(--bad-bg); }
+.cmp { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+.cmp th, .cmp td { padding: 6px 8px; border-bottom: 1px solid var(--line-soft); text-align: left; vertical-align: top; }
+.cmp th { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cmp td.rec { background: var(--good-bg); }
+.cmp td.k { font-weight: 700; }
+
+/* ---------- drawer and Bruce ---------- */
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); background: var(--panel); border-left: 1px solid var(--line); box-shadow: var(--shadow); transform: translateX(105%); transition: transform .22s ease; z-index: 30; display: flex; flex-direction: column; padding-right: env(safe-area-inset-right, 0px); }
+.drawer.open { transform: none; }
+.drawer .dh { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.drawer .dh b { font-family: var(--font-display); font-size: 14px; }
+.drawer .dh .x { margin-left: auto; }
+.drawer .db { padding: 14px 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+.bruce { position: fixed; right: 18px; bottom: 18px; width: min(390px, calc(100vw - 32px)); max-height: min(560px, calc(100vh - 36px)); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); display: none; flex-direction: column; z-index: 40; overflow: hidden; }
+.bruce.open { display: flex; }
+.bruce .bh { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: var(--rail); color: #fff; font-weight: 700; font-size: 12.5px; }
+.bruce .bh i { width: 22px; height: 22px; border-radius: 6px; background: var(--lime); color: #132335; display: grid; place-items: center; font-style: normal; font-weight: 900; font-size: 11px; }
+.bruce .bh .x { margin-left: auto; color: #fff; background: transparent; border: 0; font-size: 16px; }
+.bruce .msgs { padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.bruce .msg { max-width: 92%; padding: 8px 11px; border-radius: 12px; font-size: 12px; line-height: 1.45; }
+.bruce .msg.me { align-self: flex-end; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; }
+.bruce .msg.ai { align-self: flex-start; background: var(--panel2); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+.bruce .msg.ai b { color: var(--ink); }
+.bruce .msg.ai ul { margin: 4px 0 0; padding-left: 16px; }
+.bruce .sug { display: flex; gap: 6px; flex-wrap: wrap; padding: 0 12px 8px; }
+.bruce .sug button { font-size: 11px; border: 1px solid var(--line); background: var(--panel2); border-radius: 999px; padding: 4px 9px; color: var(--body); }
+.bruce form { display: flex; gap: 6px; padding: 8px 12px 12px; border-top: 1px solid var(--line); }
+.bruce input { flex: 1; border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; background: var(--panel); min-width: 0; }
+.fab { position: fixed; right: 18px; bottom: 18px; z-index: 35; border: 0; background: var(--rail); color: #fff; border-radius: 999px; padding: 10px 16px 10px 12px; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: var(--shadow); }
+.fab i { width: 20px; height: 20px; border-radius: 6px; background: var(--lime); color: #132335; display: grid; place-items: center; font-style: normal; font-weight: 900; font-size: 10px; }
+.toast { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; z-index: 50; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.on { opacity: 1; }
+.hidden { display: none !important; }
+
+@media (max-width: 1100px) { .c3 { grid-column: span 6; } .c4 { grid-column: span 6; } .c5, .c7, .c8, .c9 { grid-column: span 12; } .kanban { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .rail { flex-direction: row; align-items: center; padding: 8px 12px; padding-left: max(12px, env(safe-area-inset-left, 0px)); padding-right: max(12px, env(safe-area-inset-right, 0px)); overflow-x: auto; overflow-y: hidden; gap: 4px; }
+  .rail .brand { border: 0; padding: 0 8px 0 0; margin: 0; flex: none; }
+  .rail .brand span, .rail .sec, .rail .foot, .rail .nav small, .rail .nav .pri { display: none; }
+  .rail .nav { width: auto; white-space: nowrap; padding: 6px 9px; }
+  .content { padding: 14px 16px 90px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .top { padding-left: max(16px, env(safe-area-inset-left, 0px)); }
+  .c3, .c4, .c6 { grid-column: span 12; }
+  .kanban, .cal { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; } .steps > div { border-left: 0; border-top: 1px solid var(--line); } .steps > div:first-child { border-top: 0; }
+}
+
+</style>
+<div class="app">
+  <nav class="rail" aria-label="Modules">
+    <div class="brand"><div class="lg">F</div><div><b>Frutero Ice Cream</b><span>Pottsville plant · Faclon platform</span></div></div>
+    <div class="sec">Plant</div>
+    <button class="nav" data-go="home"><i>⌂</i>Overview</button>
+    <div class="sec">Modules, by priority</div>
+    <button class="nav" data-go="quality"><i>1</i>Quality<span class="pri">first</span></button>
+    <button class="nav" data-go="production"><i>2</i>Production and OEE</button>
+    <button class="nav" data-go="trace"><i>2</i>Traceability and ERP</button>
+    <button class="nav" data-go="maint"><i>3</i>Downtime and maintenance</button>
+    <button class="nav" data-go="cip"><i>4</i>CIP monitoring<span class="pri">new</span></button>
+    <div class="foot"><b>Sample data.</b> A simulated plant on the Teknoice scope and layout Rev 5, as the platform would look with all three phases live.</div>
+  </nav>
+  <div class="main">
+    <div class="top">
+      <div class="crumb" id="crumb">Plant overview</div>
+      <div class="spacer"></div>
+      <span class="chip sample">Sample data · simulated plant</span>
+      <span class="chip alert">3 open alerts</span>
+      <div class="clock"><i></i><span data-live="clock">06:12:00</span> · Tue 14 Mar 2028</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+<aside class="drawer" id="drawer" aria-label="Details"><div class="dh"><b>Details</b><button class="btn sm x">Close</button></div><div class="db"></div></aside>
+<button class="fab" id="fab"><i>B</i>Ask Bruce</button>
+<section class="bruce" id="bruce" aria-label="Bruce assistant">
+  <div class="bh"><i>B</i>Bruce · Frutero plant agent<button class="x" aria-label="Close">×</button></div>
+  <div class="msgs"></div>
+  <div class="sug"></div>
+  <form><input type="text" placeholder="Ask about the plant…" aria-label="Ask Bruce"><button class="btn pri" type="submit">Ask</button></form>
+</section>
+<div class="toast" id="toast"></div>
+<script>
+// ===== sim.js =====
+// ---------- Simulated plant: Frutero Ice Cream, Pottsville PA. All figures are sample data. ----------
+const SIM = (() => {
+  // seeded RNG so every load looks the same
+  let seed = 20280314;
+  const rnd = () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; };
+  const nz = (a) => (rnd() - 0.5) * 2 * a;
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const T0 = new Date(2028, 2, 14, 6, 12, 0); // Tue 14 Mar 2028 06:12, night shift ending
+  const start = Date.now();
+  const now = () => new Date(T0.getTime() + (Date.now() - start));
+  const hh = (d) => d.toTimeString().slice(0, 5);
+  const fmtN = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d, minimumFractionDigits: d });
+  const series = (n, f) => Array.from({ length: n }, (_, i) => f(i));
+
+  // ---- Lines ----
+  const lines = {
+    L1: { id: "L1", name: "Line 1 · Stick line", machine: "Teknoline 18/800 GI", wrapper: "Teknowrap ML8, 8 lanes", freezer: "Teknofreeze 2x2000", nominal: 18000, plan: 15750, speed: 16900, product: "Mango stick 90 ml", format: "Stick, 90 ml", state: "running", since: "03:41", stop: null, oee: { a: 91, p: 89, q: 97.9 }, tunnel: -39, chain: 100, freezerLh: 1540, overrun: 98, overrunSet: 100 },
+    L2: { id: "L2", name: "Line 2 · Bar line", machine: "Teknoline 9", wrapper: "Teknowrap R2", freezer: "Teknofreeze 2x1000", nominal: 12000, plan: 10500, speed: 0, product: "Tender coconut bar 31 ml", format: "Candy bar, 31 ml", state: "stopped", since: "06:08", stop: "R2 film splice", stopMin: 4, oee: { a: 93, p: 91, q: 98.4 }, tunnel: -38, chain: 100, freezerLh: 780, overrun: 97, overrunSet: 100 },
+  };
+  lines.L1.oeeV = Math.round(lines.L1.oee.a * lines.L1.oee.p * lines.L1.oee.q / 10000);
+  lines.L2.oeeV = Math.round(lines.L2.oee.a * lines.L2.oee.p * lines.L2.oee.q / 10000);
+
+  // hourly output for the last 24 h (index 0 = 23 h ago) and plan
+  const hourly = (plan, dips) => series(24, (i) => { let v = plan * (0.93 + nz(0.05)); for (const d of dips) if (i === d[0]) v *= d[1]; return Math.round(v); });
+  const out24 = { L1: hourly(15750, [[3, 0.55], [9, 0.78], [19, 0.6], [22, 0.84]]), L2: hourly(10500, [[6, 0.7], [14, 0.62], [23, 0.9]]) };
+  const hourLabels = series(24, (i) => { const d = new Date(T0.getTime() - (23 - i) * 3600e3); return hh(d).slice(0, 2) + ":00"; });
+
+  // ---- Overnight shift (22:00 to 06:00) ----
+  const shift = {
+    label: "Night shift, 22:00 to 06:00", crew: "Crew C", lead: "Dana R.",
+    L1: { out: 118400, plan: 126000, oee: 78, a: 91, p: 89, q: 97.9, stops: 3, stopMin: 27, longest: "14 min, ML8 reel change", rejects: 2480, rej: { stick: 1120, coating: 900, wrap: 460 }, cases: 1240, shortCases: 2 },
+    L2: { out: 79300, plan: 84000, oee: 81, a: 93, p: 91, q: 98.4, stops: 2, stopMin: 9, longest: "5 min, R2 film splice", rejects: 1290, rej: { shape: 480, coating: 610, wrap: 200 }, cases: 1410, shortCases: 0 },
+    pallets: { built: 46, inside20: 45, over: 1, avgToFreezer: 11.4, maxOutside: 23 },
+    cold: { freezer: -21, cooler: 41, hotbox: 14, dock: 37, events: 2 },
+  };
+
+  // ---- Quality: defect classes per camera ----
+  const defects = [
+    { cam: "C1", line: "L1", where: "After cutting", cls: "Missing stick", n: 410, limit: 450, rate: 0.35, trend: [31, 44, 52, 48, 55, 61, 58, 61] },
+    { cam: "C1", line: "L1", where: "After cutting", cls: "Off-centre stick", n: 520, limit: 500, rate: 0.44, trend: [50, 58, 62, 71, 66, 74, 70, 69] },
+    { cam: "C1", line: "L1", where: "After cutting", cls: "Deformed or short slice", n: 190, limit: 400, rate: 0.16, trend: [25, 22, 26, 24, 20, 25, 23, 25] },
+    { cam: "C2", line: "L1", where: "ML8 infeed", cls: "Bare patch", n: 560, limit: 600, rate: 0.47, trend: [60, 64, 70, 72, 75, 78, 70, 71] },
+    { cam: "C2", line: "L1", where: "ML8 infeed", cls: "Thin coating", n: 250, limit: 400, rate: 0.21, trend: [30, 28, 33, 31, 30, 34, 32, 32] },
+    { cam: "C2", line: "L1", where: "ML8 infeed", cls: "Drips and tails", n: 90, limit: 300, rate: 0.08, trend: [12, 10, 11, 13, 12, 10, 11, 11] },
+    { cam: "C3", line: "L1", where: "ML8 outlet", cls: "Empty or double bag", n: 460, limit: 500, rate: 0.39, trend: [52, 55, 58, 60, 57, 62, 59, 57] },
+    { cam: "C4", line: "L2", where: "After cutting", cls: "Broken bar", n: 300, limit: 350, rate: 0.38, trend: [35, 38, 40, 37, 41, 36, 38, 35] },
+    { cam: "C4", line: "L2", where: "After cutting", cls: "Double product", n: 180, limit: 300, rate: 0.23, trend: [20, 22, 24, 23, 21, 25, 22, 23] },
+    { cam: "C5", line: "L2", where: "Pocket conveyor", cls: "Bare patch", n: 420, limit: 450, rate: 0.53, trend: [48, 50, 55, 52, 57, 54, 53, 51] },
+    { cam: "C5", line: "L2", where: "Pocket conveyor", cls: "Thin coating", n: 190, limit: 300, rate: 0.24, trend: [22, 24, 25, 23, 24, 26, 23, 23] },
+    { cam: "C6", line: "L2", where: "R2 outlet", cls: "Empty or double bag", n: 200, limit: 300, rate: 0.25, trend: [24, 25, 26, 25, 27, 24, 25, 24] },
+  ];
+  const model = { accuracy: 98.4, missed: 1.1, false: 0.5, retrained: "11 Mar 2028", images30d: 184200, labelled: 2000, drift: "stable", classes: 11 };
+  // flagged images for QA review (synthetic drawings)
+  const flagged = [
+    { id: "IMG-7731", t: "05:52", cam: "C1", lane: 3, cls: "Off-centre stick", conf: 0.93, kind: "stick", off: 9 },
+    { id: "IMG-7724", t: "05:47", cam: "C2", lane: 6, cls: "Bare patch", conf: 0.96, kind: "coat", off: 0 },
+    { id: "IMG-7702", t: "05:31", cam: "C1", lane: 1, cls: "Missing stick", conf: 0.99, kind: "nostick", off: 0 },
+    { id: "IMG-7688", t: "05:19", cam: "C5", lane: 2, cls: "Bare patch", conf: 0.91, kind: "coatbar", off: 0 },
+    { id: "IMG-7650", t: "04:58", cam: "C4", lane: 4, cls: "Broken bar", conf: 0.97, kind: "broken", off: 0 },
+    { id: "IMG-7611", t: "04:36", cam: "C3", lane: 7, cls: "Double bag", conf: 0.88, kind: "double", off: 0 },
+  ];
+  const rejHourly = { L1: series(8, (i) => ({ stick: Math.round(140 + nz(40)), coating: Math.round(112 + nz(35)), wrap: Math.round(58 + nz(20)) })), L2: series(8, (i) => ({ shape: Math.round(60 + nz(20)), coating: Math.round(76 + nz(25)), wrap: Math.round(25 + nz(10)) })) };
+  const shiftHours = ["22:00", "23:00", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00"];
+
+  // ---- Zones (temperatures, set points, alerts) ----
+  const zones = [
+    { id: "freezer", name: "Freezer, −20 °F", set: -20, alertAbove: -15, hold: 15, now: -21.2, sensors: "4 probes at rack height, 2 door contacts, defrost state", who: "Shift lead; owner after 15 min", pallets: 318, cap: 552, trend: series(48, (i) => -21.2 + nz(0.6) + (i > 20 && i < 24 ? 1.6 : 0)), doors: [{ t: "02:14", min: 11, where: "Cooler door", ack: "02:17, Dana R." }] },
+    { id: "cooler", name: "Cooler, 40 °F", set: 40, alertAbove: 45, hold: 15, now: 41.3, sensors: "2 probes, 1 door contact", who: "Shift lead", pallets: 86, cap: 120, trend: series(48, (i) => 40.6 + nz(0.5) + (i >= 20 && i < 24 ? 2.4 : 0)) },
+    { id: "hotbox", name: "Hot box, tempering", set: 14, band: [10, 20], now: 14.2, sensors: "1 probe; recipe from the production plan", who: "Shift lead, QA", pallets: 12, cap: 48, trend: series(48, (i) => 14.2 + nz(0.8)) },
+    { id: "tunnel1", name: "Tunnel 18/800, line 1", set: -40, alertAbove: -31, now: -39.1, sensors: "Air temperature and chain speed from P3", who: "Line operator, maintenance", trend: series(48, (i) => -39.1 + nz(0.7) + (i === 11 ? 3.2 : 0)) },
+    { id: "tunnel2", name: "Tunnel, line 2", set: -40, alertAbove: -31, now: -38.4, sensors: "Air temperature and chain speed from P4", who: "Line operator, maintenance", trend: series(48, (i) => -38.4 + nz(0.7)) },
+    { id: "dock", name: "Dock, south end", set: 38, alertAbove: 50, now: 37.4, sensors: "Door contacts on 4 dock doors, 1 probe, camera C10", who: "Shipping, shift lead", trend: series(48, (i) => 37.4 + nz(1.2) + (i > 40 ? 2 : 0)) },
+    { id: "choc", name: "Chocolate tanks", set: 113, band: [110, 116], now: 112.6, sensors: "Transmitters on both enrober tanks", who: "Line operator", trend: series(48, (i) => 112.6 + nz(0.9)) },
+    { id: "mix", name: "Mix room, pasteuriser", set: 175, band: [175, 180], now: 176.1, sensors: "Pasteuriser chart and holding tube; mix tank 38 °F", who: "QA", trend: series(48, (i) => 176.1 + nz(0.6)) },
+  ];
+  const zoneEvents = [
+    { t: "02:14", zone: "Cooler", what: "Door open 11 min", detail: "Forklift unloading mix; acknowledged 02:17 by Dana R.", sev: "warn" },
+    { t: "03:40", zone: "Palletizing", what: "Pallet 0412 outside 23 min", detail: "Waited at end packaging; clip from C8 attached; QA check before release", sev: "bad" },
+    { t: "00:52", zone: "Freezer", what: "Defrost cycle", detail: "Evaporator 2 defrost 28 min, within set", sev: "ok" },
+    { t: "23:08", zone: "Tunnel 18/800", what: "Air −36 °F for 6 min", detail: "After reel change restart; back to −39 °F", sev: "ok" },
+  ];
+
+  // ---- Pallets, SSCC, ERP ----
+  const skus = ["Mango stick 90 ml", "Tender coconut bar 31 ml", "Chiku stick 90 ml", "Sitafal bar 31 ml", "Guava stick 90 ml"];
+  const pallets = [];
+  for (let i = 0; i < 46; i++) {
+    const built = new Date(T0.getTime() - (46 - i) * 10.4 * 60e3 - 20 * 60e3);
+    const line = i % 5 === 0 ? "L2" : (i % 2 ? "L1" : "L2");
+    const sku = line === "L1" ? (i % 3 === 0 ? "Chiku stick 90 ml" : "Mango stick 90 ml") : (i % 4 === 0 ? "Sitafal bar 31 ml" : "Tender coconut bar 31 ml");
+    const outside = i === 33 ? 23 : clamp(Math.round(9 + nz(5)), 5, 19);
+    const id = String(380 + i).padStart(4, "0");
+    const status = i === 33 ? "hold" : (i > 43 ? "staged" : "freezer");
+    pallets.push({ id: "P-" + id, sscc: "00 0860125 00000" + String(3812 + i).padStart(4, "0"), line, sku, lot: "L28-" + (line === "L1" ? "0314-A" : "0314-B"), cases: line === "L1" ? 64 : 80, built: hh(built), g1: hh(new Date(built.getTime() + 8 * 60e3)), g2: status === "staged" ? null : hh(new Date(built.getTime() + outside * 60e3)), outside, status, loc: status === "freezer" ? "F-" + String.fromCharCode(65 + (i % 6)) + (1 + (i % 12)) + "-" + (1 + (i % 3)) : (status === "staged" ? "Packaging exit" : "QA hold rack"), po: line === "L1" ? "PO-28-0411" : "PO-28-0409" });
+  }
+  const orders = [
+    { po: "PO-28-0411", sku: "Mango stick 90 ml", line: "L1", planned: 20, built: 14, cases: 896, due: "16 Mar", customer: "Retail DC 1, Allentown", status: "In production" },
+    { po: "PO-28-0409", sku: "Tender coconut bar 31 ml", line: "L2", planned: 24, built: 22, cases: 1760, due: "15 Mar", customer: "Retail DC 2, Carlisle", status: "In production" },
+    { po: "PO-28-0412", sku: "Chiku stick 90 ml", line: "L1", planned: 12, built: 10, cases: 640, due: "17 Mar", customer: "Club store DC, Pottstown", status: "In production" },
+    { po: "PO-28-0405", sku: "Sitafal bar 31 ml", line: "L2", planned: 16, built: 16, cases: 1280, due: "14 Mar", customer: "Retail DC 1, Allentown", status: "Ready to ship" },
+    { po: "PO-28-0414", sku: "Guava stick 90 ml", line: "L1", planned: 18, built: 0, cases: 0, due: "19 Mar", customer: "Private label, Northeast", status: "Scheduled 15 Mar" },
+  ];
+  const inventory = [
+    { sku: "Mango stick 90 ml", lot: "L28-0314-A", pallets: 14, cases: 896, age: "today", fefo: "11 Mar 2029" },
+    { sku: "Mango stick 90 ml", lot: "L28-0312-A", pallets: 31, cases: 1984, age: "2 d", fefo: "9 Mar 2029" },
+    { sku: "Tender coconut bar 31 ml", lot: "L28-0314-B", pallets: 22, cases: 1760, age: "today", fefo: "11 Mar 2029" },
+    { sku: "Chiku stick 90 ml", lot: "L28-0313-A", pallets: 40, cases: 2560, age: "1 d", fefo: "10 Mar 2029" },
+    { sku: "Sitafal bar 31 ml", lot: "L28-0311-B", pallets: 44, cases: 3520, age: "3 d", fefo: "8 Mar 2029" },
+    { sku: "Guava stick 90 ml", lot: "L28-0308-A", pallets: 58, cases: 3712, age: "6 d", fefo: "5 Mar 2029" },
+    { sku: "Pints, assorted (co-packer transfer)", lot: "CP-0302", pallets: 109, cases: 8720, age: "12 d", fefo: "27 Feb 2029" },
+  ];
+  const shipments = [
+    { t: "09:00", id: "ASN-28-0614", to: "Retail DC 1, Allentown", pallets: 22, status: "Loading 08:30, door 2", temp: "Reefer pre-cooled −10 °F" },
+    { t: "11:30", id: "ASN-28-0615", to: "Retail DC 2, Carlisle", pallets: 18, status: "Picked, staged in freezer aisle A", temp: "Awaiting truck" },
+    { t: "14:00", id: "ASN-28-0616", to: "Club store DC, Pottstown", pallets: 26, status: "Pick list released to ERP", temp: "" },
+  ];
+  const genealogy = { batch: "MB-0314-03", gallons: 300, pasteurised: "03:10, 176 °F for 25 s", mixTemp: "38 °F", freezer: "Teknofreeze 2x2000, 1,540 L/h, overrun 98 %", run: "Line 1, 03:41 to 05:50, Mango stick 90 ml", pieces: 36400, cases: 569, pallets: ["P-0409", "P-0410", "P-0411", "P-0412", "P-0413", "P-0414"], po: "PO-28-0411", shipment: "ASN-28-0614 (planned)" };
+
+  // ---- Crews and operators ----
+  const crews = [
+    { id: "A", name: "Crew A, days", lead: "Luis M.", oee: 82, out: 101, resp: 3.1, change: 24, fpq: 98.1, p20: 99, hours: 40 },
+    { id: "B", name: "Crew B, evenings", lead: "Priya S.", oee: 80, out: 97, resp: 3.8, change: 29, fpq: 97.9, p20: 98, hours: 40 },
+    { id: "C", name: "Crew C, nights", lead: "Dana R.", oee: 78, out: 94, resp: 5.2, change: 33, fpq: 97.6, p20: 97, hours: 40 },
+  ];
+  const stations = [
+    { st: "Freezer and extruder, L1", who: "Operator 1", note: "Overrun held at 98 %, set 100 %", kpi: "Litres/h 1,540", state: "ok" },
+    { st: "ML8 wrapper, L1", who: "Operator 2", note: "Reel change 14 min; target 8", kpi: "Lane discards 0.4 %", state: "warn" },
+    { st: "Case packing, L1 and L2", who: "Operator 3", note: "2 short cases flagged by C7", kpi: "1,240 cases", state: "ok" },
+    { st: "Palletizing and forklift", who: "Operator 4", note: "Pallet 0412 waited 23 min", kpi: "Avg to freezer 11.4 min", state: "warn" },
+    { st: "R2 wrapper, L2", who: "Operator 5", note: "Film splice at 06:08, 4 min", kpi: "Print faults 0.2 %", state: "bad" },
+  ];
+  const oeeWeeks = { labels: ["W6", "W7", "W8", "W9", "W10", "W11"], L1: [71, 74, 76, 77, 79, 78], L2: [75, 77, 79, 80, 81, 81] };
+  const losses = [
+    { cause: "ML8 reel change", min: 186, kind: "Planned stop", machine: "ML8 wrapper" },
+    { cause: "Stick inserter jam", min: 124, kind: "Breakdown", machine: "Teknoline 18/800" },
+    { cause: "Format changeover", min: 118, kind: "Changeover", machine: "Both lines" },
+    { cause: "R2 film splice", min: 84, kind: "Breakdown", machine: "R2 wrapper" },
+    { cause: "Tunnel chain overload stop", min: 62, kind: "Breakdown", machine: "Teknoline 18/800" },
+    { cause: "CIP overrun (freezer)", min: 58, kind: "Planned stop", machine: "Teknofreeze 2x2000" },
+    { cause: "Cutting wire replacement", min: 35, kind: "Breakdown", machine: "Teknoline 9" },
+    { cause: "Pick-up head fault", min: 28, kind: "Breakdown", machine: "Enrober L1" },
+  ];
+  const byProduct = [
+    { sku: "Mango stick 90 ml", line: "L1", oee: 80, speed: 16900, fpq: 98.0, change: 26 },
+    { sku: "Chiku stick 90 ml", line: "L1", oee: 77, speed: 16400, fpq: 97.4, change: 31 },
+    { sku: "Guava stick 90 ml", line: "L1", oee: 74, speed: 15800, fpq: 97.1, change: 34 },
+    { sku: "Tender coconut bar 31 ml", line: "L2", oee: 82, speed: 11200, fpq: 98.5, change: 22 },
+    { sku: "Sitafal bar 31 ml", line: "L2", oee: 79, speed: 10900, fpq: 98.1, change: 25 },
+  ];
+
+  // ---- Downtime events and maintenance ----
+  const events = [
+    { t: "06:08", line: "L2", machine: "R2 wrapper", cause: "Film splice", min: 4, resp: 1.2, who: "Operator 5", status: "open", kind: "Breakdown" },
+    { t: "04:52", line: "L1", machine: "ML8 wrapper", cause: "Reel change, lane 3 to 6", min: 14, resp: 2.0, who: "Operator 2", status: "closed", kind: "Planned stop" },
+    { t: "03:30", line: "L1", machine: "Stick inserter 2", cause: "Stick jam", min: 9, resp: 4.5, who: "Operator 1", status: "closed", kind: "Breakdown" },
+    { t: "02:12", line: "L2", machine: "Teknoline 9", cause: "Cutting wire check", min: 5, resp: 1.0, who: "Operator 5", status: "closed", kind: "Planned stop" },
+    { t: "01:40", line: "L1", machine: "Tunnel 18/800", cause: "Chain overload stop", min: 4, resp: 3.0, who: "Maintenance, Omar", status: "closed", kind: "Breakdown" },
+    { t: "23:05", line: "L1", machine: "ML8 wrapper", cause: "Reel change", min: 8, resp: 1.5, who: "Operator 2", status: "closed", kind: "Planned stop" },
+    { t: "22:00", line: "L1", machine: "Teknoline 18/800", cause: "Format change to Mango 90 ml", min: 24, resp: 0, who: "Crew C", status: "closed", kind: "Changeover" },
+  ];
+  const assets = [
+    { id: "FRZ1", name: "Teknofreeze 2x2000", hours: 1980, next: "Dasher service at 2,000 h", due: "Tonight", mtbf: 310, mttr: 38, state: "warn", health: 71 },
+    { id: "FRZ2", name: "Teknofreeze 2x1000", hours: 1412, next: "Pump seal inspection at 1,500 h", due: "6 days", mtbf: 420, mttr: 32, state: "ok", health: 86 },
+    { id: "TL1", name: "Teknoline 18/800 GI", hours: 1890, next: "Tray-chain tension check", due: "2 overload stops this week", mtbf: 96, mttr: 11, state: "warn", health: 68 },
+    { id: "TL2", name: "Teknoline 9", hours: 1760, next: "Cutting wire set", due: "Weekly, Thu", mtbf: 150, mttr: 9, state: "ok", health: 82 },
+    { id: "ML8", name: "Teknowrap ML8", hours: 1902, next: "Reel stand splice unit", due: "Top loss this week", mtbf: 42, mttr: 10, state: "warn", health: 64 },
+    { id: "R2", name: "Teknowrap R2", hours: 1750, next: "Film tension rollers", due: "9 days", mtbf: 88, mttr: 6, state: "ok", health: 80 },
+    { id: "ENR", name: "Enrober and chocolate tanks", hours: 1640, next: "Pump seal, tank 1", due: "4 days", mtbf: 260, mttr: 22, state: "ok", health: 84 },
+    { id: "CO2", name: "CO2 pack, compressor 2", hours: 2210, next: "Capacity steps above normal", due: "Inspect this week", mtbf: 500, mttr: 90, state: "warn", health: 66 },
+  ];
+  const insights = [
+    { sev: "warn", title: "Dasher service on the 2x2000 is due in about 20 running hours", body: "1,980 h on the dasher; Teknoice sets 2,000 h. Tonight's CIP window at 06:30 has 40 minutes free. Doing it then avoids a forced stop mid-shift on Thursday.", ev: "Freezer hour counter P1; last service 14 Dec 2027", act: "Create work order: dasher service, 40 min, tonight" },
+    { sev: "bad", title: "Chain overload stops on the 18/800 tunnel are rising: 2 this week against 0.5 a week", body: "Both stops came within 15 minutes of a tunnel air temperature above −36 °F, after reel-change restarts. The pattern points at ice build-up on the tray chain rather than a mechanical fault.", ev: "P3 overload stop counter; tunnel air trend; event log 01:40 and Mon 03:12", act: "Create work order: tray-chain inspection and tension, 60 min" },
+    { sev: "warn", title: "ML8 reel changes cluster between 02:00 and 05:00 and take 14 minutes against 8 on days", body: "Night crew C changes reels one lane at a time. Day crew A pre-stages reels and splices on the fly. 186 minutes lost this week, the top loss in the plant.", ev: "Film-speed signal from the reel encoders; event log; crew comparison", act: "Suggest: pre-stage reels at 01:30; splice training for crew C" },
+    { sev: "warn", title: "CO2 pack compressor 2 is loading extra capacity steps for the same freezer load", body: "Capacity steps are 18 percent above the four-week norm at the same suction pressure and ambient. Early warning of a refrigerant charge or valve issue, before it shows as freezer temperature.", ev: "Refrigeration controller P10: capacity steps, suction pressure; freezer probes", act: "Create work order: refrigeration contractor check, this week" },
+    { sev: "good", title: "Sensor-verified CIP saved 58 minutes of line time yesterday", body: "Three cycles finished 17 to 21 minutes early on measured endpoints, with final-rinse conductivity and residue index inside limits on every cycle.", ev: "CIP module: cycles 0313-1 to 0313-3", act: "See CIP" },
+  ];
+  const pmPlan = [
+    { day: 0, what: "Dasher service, 2x2000", min: 40, who: "Marco", due: true }, { day: 0, what: "ML8 reel stand check", min: 30, who: "Jen" },
+    { day: 1, what: "Tray-chain tension, 18/800", min: 60, who: "Omar", due: true }, { day: 1, what: "Camera lens clean, C1 to C6", min: 20, who: "Jen" },
+    { day: 2, what: "Enrober pump seal, tank 1", min: 45, who: "Marco" }, { day: 2, what: "CIP valve seat inspection", min: 30, who: "Omar" },
+    { day: 3, what: "Cutting wire set, Teknoline 9", min: 25, who: "Jen", done: false }, { day: 3, what: "CO2 pack, contractor visit", min: 120, who: "Contractor" },
+    { day: 4, what: "Freezer-door portal reader check", min: 15, who: "Jen" }, { day: 4, what: "Pump seal inspection, 2x1000", min: 45, who: "Marco" },
+    { day: 5, what: "Weekly wash-down audit", min: 60, who: "QA" },
+    { day: 6, what: "R2 film tension rollers", min: 30, who: "Omar" },
+  ];
+  const workOrders = [
+    { id: "WO-0341", title: "Dasher service, Teknofreeze 2x2000", machine: "FRZ1", est: 40, col: "assigned", tech: "Marco", src: "Bruce suggestion", pri: "High" },
+    { id: "WO-0342", title: "Tray-chain inspection and tension", machine: "TL1", est: 60, col: "open", tech: "", src: "Bruce suggestion", pri: "High" },
+    { id: "WO-0338", title: "ML8 splice unit, lane 3 to 6 sensor", machine: "ML8", est: 90, col: "progress", tech: "Jen", src: "Operator 2", pri: "Medium", hours: 1.5 },
+    { id: "WO-0336", title: "Stick inserter 2, guide rail wear", machine: "TL1", est: 120, col: "progress", tech: "Omar", src: "Event 03:30", pri: "Medium", hours: 0.8 },
+    { id: "WO-0330", title: "Cooler door closer adjustment", machine: "Cold rooms", est: 30, col: "done", tech: "Jen", src: "Zone event 02:14", pri: "Low", hours: 0.5 },
+    { id: "WO-0327", title: "R2 print registration sensor", machine: "R2", est: 45, col: "done", tech: "Marco", src: "Operator 5", pri: "Low", hours: 0.7 },
+    { id: "WO-0343", title: "Refrigeration contractor, compressor 2", machine: "CO2", est: 120, col: "open", tech: "", src: "Bruce suggestion", pri: "Medium" },
+  ];
+  const woHours = [{ m: "ML8 wrapper", h: 9.5 }, { m: "Stick inserters", h: 6.3 }, { m: "Freezer 2x1000", h: 4.0 }, { m: "Preventive, scheduled", h: 7.2 }, { m: "Cold rooms and doors", h: 1.5 }];
+  const stopsHeat = series(7, (d) => series(24, (h) => { let v = rnd() < 0.72 ? 0 : Math.round(1 + rnd() * 2); if (h >= 2 && h <= 4 && rnd() < 0.5) v += 2; return v; }));
+
+  // ---- CIP ----
+  const circuits = [
+    { id: "CIP-1", name: "Freezer 2x2000 and line 1 mix lines", state: "running", phase: 2, t: 12.4, cycleId: "0314-1" },
+    { id: "CIP-2", name: "Freezer 2x1000 and line 2 mix lines", state: "due 06:40", phase: -1 },
+    { id: "CIP-3", name: "Mix room: pasteuriser and tanks", state: "done 05:10", phase: 6 },
+    { id: "CIP-4", name: "Fruit feeder and ripple pump", state: "every 2nd day", phase: -1 },
+  ];
+  const phases = [
+    { k: "Pre-rinse", fixed: 10, actual: 6.5, end: "Return turbidity under 20 NTU and residue index under 0.15", color: "#5B86FF" },
+    { k: "Caustic wash 1.5 %, 167 °F", fixed: 25, actual: 19, end: "Residue index flat for 3 min; conductivity steady at 48 mS/cm", color: "#1655F2" },
+    { k: "Intermediate rinse", fixed: 8, actual: 5, end: "Return conductivity within 50 µS/cm of supply", color: "#5B86FF" },
+    { k: "Acid wash 0.8 %, 140 °F", fixed: 15, actual: 12, end: "pH steady at 2.1 for 3 min; mineral index flat", color: "#6541C4" },
+    { k: "Final rinse", fixed: 10, actual: 6, end: "Conductivity equal to supply ±20 µS/cm; pH 6.5 to 8.0; residue index under 0.05", color: "#5B86FF" },
+    { k: "Sanitise", fixed: 5, actual: 5, end: "Contact time, fixed", color: "#1E8A6E" },
+  ];
+  const fixedTotal = phases.reduce((a, p) => a + p.fixed, 0), actualTotal = phases.reduce((a, p) => a + p.actual, 0);
+  const cipSensors = {
+    inlet: [{ k: "Temperature", v: 167.3, u: "°F", lo: 160, hi: 172 }, { k: "Flow", v: 118, u: "gal/min", lo: 100, hi: 130 }, { k: "Pressure", v: 42.1, u: "psi", lo: 35, hi: 50 }, { k: "Conductivity", v: 48.2, u: "mS/cm", lo: 45, hi: 52 }, { k: "pH", v: 12.6, u: "", lo: 12.2, hi: 13 }, { k: "Turbidity", v: 1.2, u: "NTU", lo: 0, hi: 5 }],
+    outlet: [{ k: "Temperature", v: 161.8, u: "°F", lo: 155, hi: 172 }, { k: "Flow", v: 115, u: "gal/min", lo: 100, hi: 130 }, { k: "Conductivity", v: 47.6, u: "mS/cm", lo: 45, hi: 52 }, { k: "pH", v: 12.5, u: "", lo: 12, hi: 13 }, { k: "Turbidity", v: 9.4, u: "NTU", lo: 0, hi: 20 }, { k: "Residue index (spectral)", v: 0.21, u: "", lo: 0, hi: 1 }, { k: "Contaminant index", v: 0.06, u: "", lo: 0, hi: 0.2 }],
+    tanks: [{ k: "Caustic tank", v: 71, u: "%" }, { k: "Acid tank", v: 64, u: "%" }, { k: "Recovered rinse water", v: 48, u: "%" }, { k: "Sanitiser", v: 82, u: "%" }],
+  };
+  // residue index decay during the caustic phase (per minute), and the spectral curves
+  const residue = series(26, (i) => Math.max(0.04, 1.0 * Math.exp(-i / 6.2) + nz(0.015)));
+  const wl = series(51, (i) => 250 + i * 10);
+  const spectrum = {
+    clean: wl.map((w) => 0.03 + 0.02 * Math.exp(-((w - 280) ** 2) / 800)),
+    start: wl.map((w) => 0.08 + 0.55 * Math.exp(-((w - 280) ** 2) / 900) + 0.42 * Math.exp(-((w - 440) ** 2) / 2600) + 0.12 * Math.exp(-((w - 520) ** 2) / 900)),
+    now: wl.map((w) => 0.04 + 0.12 * Math.exp(-((w - 280) ** 2) / 900) + 0.09 * Math.exp(-((w - 440) ** 2) / 2600) + 0.03 * Math.exp(-((w - 520) ** 2) / 900)),
+  };
+  const cycles = series(14, (i) => { const d = new Date(T0.getTime() - (14 - i) * 86400e3); const c = ["CIP-1", "CIP-2", "CIP-3"][i % 3]; const saved = clamp(Math.round(19 + nz(3)), 14, 22); return { id: d.toISOString().slice(5, 10).replace("-", "") + "-" + (1 + i % 3), date: d.toLocaleDateString("en-US", { month: "short", day: "numeric" }), circuit: c, fixed: 73, actual: 73 - saved, saved, water: Math.round(2600 - saved * 36), caustic: (12 - saved * 0.15).toFixed(1), acid: (6 - saved * 0.08).toFixed(1), kwh: Math.round(95 - saved * 1.3), pass: true, rinse: (18 + nz(6)).toFixed(0) }; });
+  const cipDefaults = { cyclesPerDay: 3.5, lineHourValue: 1500, waterCost: 0.008, causticCost: 1.2, acidCost: 1.5, energyCost: 0.12, waterSaved: 700, causticSaved: 3.0, acidSaved: 1.5, kwhSaved: 25 };
+
+  // ---- Alerts (plant-wide) ----
+  const alerts = [
+    { t: "06:08", sev: "warn", title: "Line 2 stopped: R2 film splice", where: "R2 wrapper", open: true },
+    { t: "03:40", sev: "bad", title: "Pallet P-0412 outside the freezer 23 min", where: "End packaging", open: true, note: "On QA hold; clip attached" },
+    { t: "05:52", sev: "warn", title: "Off-centre stick above limit on C1, lane 3", where: "Line 1 cutting", open: true },
+    { t: "02:14", sev: "ok", title: "Cooler door open 11 min, acknowledged", where: "Cooler", open: false },
+  ];
+
+  // ---- live tick (nudges live values) ----
+  function tick() {
+    const L1 = lines.L1; L1.speed = clamp(Math.round(L1.speed + nz(90)), 16300, 17400); L1.freezerLh = clamp(Math.round(L1.freezerLh + nz(8)), 1500, 1580); L1.tunnel = clamp(+(L1.tunnel + nz(0.2)).toFixed(1), -40.5, -38);
+    for (const z of zones) z.now = +(z.now + nz(z.id === "mix" || z.id === "choc" ? 0.15 : 0.1)).toFixed(1);
+    const c = circuits[0]; if (c.state === "running") { c.t = +(c.t + 2 / 60).toFixed(2); if (c.t > 19) { c.phase = Math.min(5, c.phase + 1); c.t = 0; } }
+    cipSensors.outlet[4].v = +clamp(cipSensors.outlet[4].v + nz(0.3), 6, 12).toFixed(1);
+    cipSensors.outlet[5].v = +clamp(cipSensors.outlet[5].v - 0.002 + nz(0.004), 0.04, 0.3).toFixed(3);
+    cipSensors.inlet[0].v = +clamp(cipSensors.inlet[0].v + nz(0.2), 165, 170).toFixed(1);
+    cipSensors.outlet[0].v = +clamp(cipSensors.outlet[0].v + nz(0.2), 159, 165).toFixed(1);
+  }
+
+  return { rnd, nz, clamp, now, hh, fmtN, series, lines, out24, hourLabels, shift, defects, model, flagged, rejHourly, shiftHours, zones, zoneEvents, pallets, orders, inventory, shipments, genealogy, skus, crews, stations, oeeWeeks, losses, byProduct, events, assets, insights, pmPlan, workOrders, woHours, stopsHeat, circuits, phases, fixedTotal, actualTotal, cipSensors, residue, wl, spectrum, cycles, cipDefaults, alerts, tick };
+})();
+
+
+// ===== charts.js =====
+// ---------- Small SVG chart helpers (theme colours through CSS variables) ----------
+const CH = (() => {
+  const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+  const nice = (v) => Math.abs(v) >= 1000 ? (v / 1000).toFixed(v % 1000 === 0 ? 0 : 1) + "k" : String(Math.round(v * 10) / 10);
+  const grid = "var(--grid)", txt = "var(--muted)", ink = "var(--ink)";
+
+  // line / area chart: series [{data, color, name, area, dash}], optional band {lo, hi, color}, limit lines [{y, color, label}]
+  function line(o) {
+    const w = o.w || 600, h = o.h || 180, pl = o.pl || 38, pr = 10, pt = 10, pb = o.xLabels ? 22 : 10;
+    const all = o.series.flatMap((s) => s.data).concat(o.limits ? o.limits.map((l) => l.y) : []).concat(o.band ? [o.band.lo, o.band.hi] : []);
+    let y0 = o.yMin != null ? o.yMin : Math.min(...all), y1 = o.yMax != null ? o.yMax : Math.max(...all);
+    if (y1 === y0) { y1 += 1; y0 -= 1; }
+    const pad = (y1 - y0) * 0.08; if (o.yMin == null) y0 -= pad; if (o.yMax == null) y1 += pad;
+    const n = Math.max(...o.series.map((s) => s.data.length));
+    const X = (i) => pl + (i / (n - 1)) * (w - pl - pr), Y = (v) => pt + (1 - (v - y0) / (y1 - y0)) * (h - pt - pb);
+    let g = "";
+    const ticks = 4;
+    for (let t = 0; t <= ticks; t++) { const v = y0 + (y1 - y0) * t / ticks; g += `<line x1="${pl}" x2="${w - pr}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="${grid}" stroke-width="1"/><text x="${pl - 6}" y="${(Y(v) + 3.5).toFixed(1)}" text-anchor="end" font-size="9.5" fill="${txt}">${esc(o.fmt ? o.fmt(v) : nice(v))}</text>`; }
+    if (o.band) g += `<rect x="${pl}" y="${Y(o.band.hi).toFixed(1)}" width="${w - pl - pr}" height="${(Y(o.band.lo) - Y(o.band.hi)).toFixed(1)}" fill="${o.band.color || "var(--good)"}" opacity=".10"/>`;
+    if (o.xLabels) { const step = Math.ceil(o.xLabels.length / (o.xEvery || 6)); o.xLabels.forEach((l, i) => { if (i % step === 0 || i === o.xLabels.length - 1) g += `<text x="${X(i).toFixed(1)}" y="${h - 6}" text-anchor="middle" font-size="9.5" fill="${txt}">${esc(l)}</text>`; }); }
+    for (const s of o.series) {
+      const pts = s.data.map((v, i) => `${X(i).toFixed(1)},${Y(v).toFixed(1)}`);
+      if (s.area) g += `<path d="M${pts[0]} L${pts.join(" L")} L${X(s.data.length - 1).toFixed(1)},${Y(y0).toFixed(1)} L${X(0).toFixed(1)},${Y(y0).toFixed(1)} Z" fill="${s.color}" opacity=".12"/>`;
+      g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2}" ${s.dash ? `stroke-dasharray="${s.dash}"` : ""} stroke-linejoin="round" stroke-linecap="round"/>`;
+      if (s.end !== false) { const last = s.data.length - 1; g += `<circle cx="${X(last).toFixed(1)}" cy="${Y(s.data[last]).toFixed(1)}" r="3" fill="${s.color}"/>`; }
+    }
+    if (o.limits) for (const l of o.limits) g += `<line x1="${pl}" x2="${w - pr}" y1="${Y(l.y).toFixed(1)}" y2="${Y(l.y).toFixed(1)}" stroke="${l.color || "var(--bad)"}" stroke-width="1.2" stroke-dasharray="4 3"/><text x="${w - pr - 2}" y="${(Y(l.y) - 3).toFixed(1)}" text-anchor="end" font-size="9" font-weight="700" fill="${l.color || "var(--bad)"}">${esc(l.label || "")}</text>`;
+    if (o.marks) for (const m of o.marks) g += `<line x1="${X(m.i).toFixed(1)}" x2="${X(m.i).toFixed(1)}" y1="${pt}" y2="${h - pb}" stroke="${m.color || "var(--warn)"}" stroke-width="1" stroke-dasharray="2 2"/><text x="${(X(m.i) + 3).toFixed(1)}" y="${pt + 9}" font-size="9" fill="${m.color || "var(--warn)"}">${esc(m.label || "")}</text>`;
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(o.label || "chart")}">${g}</svg>`;
+  }
+
+  // vertical bars: cats [], series [{data, color, name}], stacked; optional plan line
+  function bars(o) {
+    const w = o.w || 600, h = o.h || 170, pl = 36, pr = 8, pt = 10, pb = 22, n = o.cats.length;
+    const tot = o.cats.map((_, i) => o.stacked ? o.series.reduce((a, s) => a + s.data[i], 0) : Math.max(...o.series.map((s) => s.data[i])));
+    const ymax = o.yMax || Math.max(...tot.concat(o.plan || [0])) * 1.1 || 1;
+    const Y = (v) => pt + (1 - v / ymax) * (h - pt - pb), slot = (w - pl - pr) / n, bw = o.stacked ? slot * 0.62 : slot * 0.62 / o.series.length;
+    let g = "";
+    for (let t = 0; t <= 4; t++) { const v = ymax * t / 4; g += `<line x1="${pl}" x2="${w - pr}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="${grid}"/><text x="${pl - 5}" y="${(Y(v) + 3.5).toFixed(1)}" text-anchor="end" font-size="9.5" fill="${txt}">${esc(o.fmt ? o.fmt(v) : nice(v))}</text>`; }
+    o.cats.forEach((c, i) => {
+      const x0 = pl + i * slot + (slot - (o.stacked ? bw : bw * o.series.length)) / 2; let acc = 0;
+      o.series.forEach((s, k) => { const v = s.data[i]; if (o.stacked) { g += `<rect x="${x0.toFixed(1)}" y="${Y(acc + v).toFixed(1)}" width="${bw.toFixed(1)}" height="${(Y(acc) - Y(acc + v)).toFixed(1)}" fill="${s.color}" rx="1.5"/>`; acc += v; } else g += `<rect x="${(x0 + k * bw).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(bw - 1).toFixed(1)}" height="${(Y(0) - Y(v)).toFixed(1)}" fill="${s.color}" rx="1.5"/>`; });
+      const step = Math.ceil(n / (o.xEvery || 8)); if (i % step === 0 || i === n - 1) g += `<text x="${(pl + i * slot + slot / 2).toFixed(1)}" y="${h - 6}" text-anchor="middle" font-size="9.5" fill="${txt}">${esc(c)}</text>`;
+    });
+    if (o.plan) { const pts = o.plan.map((v, i) => `${(pl + i * slot + slot / 2).toFixed(1)},${Y(v).toFixed(1)}`); g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${ink}" stroke-width="1.4" stroke-dasharray="4 3"/>`; }
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(o.label || "bar chart")}">${g}</svg>`;
+  }
+
+  // horizontal bars with labels (Pareto)
+  function hbars(rows, o = {}) {
+    const max = Math.max(...rows.map((r) => r.v)) || 1;
+    return rows.map((r) => `<div class="bar"><span><span>${esc(r.k)}${r.s ? ` <em style="color:var(--muted);font-style:normal">${esc(r.s)}</em>` : ""}</span></span><i class="${r.c || ""}" style="width:${(r.v / max * 100).toFixed(1)}%"></i><b>${esc(r.t != null ? r.t : r.v)}</b></div>`).join("");
+  }
+
+  function spark(data, color = "var(--accent)", w = 80, h = 22) {
+    const y0 = Math.min(...data), y1 = Math.max(...data) || 1, n = data.length;
+    const pts = data.map((v, i) => `${(i / (n - 1) * (w - 2) + 1).toFixed(1)},${(h - 2 - (y1 === y0 ? 0.5 : (v - y0) / (y1 - y0)) * (h - 4)).toFixed(1)}`);
+    return `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" aria-hidden="true"><polyline points="${pts.join(" ")}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round"/><circle cx="${pts[n - 1].split(",")[0]}" cy="${pts[n - 1].split(",")[1]}" r="2" fill="${color}"/></svg>`;
+  }
+
+  // ring gauge
+  function ring(pct, color = "var(--accent)", label = "", size = 64) {
+    const r = 26, c = 2 * Math.PI * r, off = c * (1 - Math.max(0, Math.min(1, pct / 100)));
+    return `<svg viewBox="0 0 64 64" width="${size}" height="${size}" aria-label="${esc(label)}"><circle cx="32" cy="32" r="${r}" fill="none" stroke="${grid}" stroke-width="7"/><circle cx="32" cy="32" r="${r}" fill="none" stroke="${color}" stroke-width="7" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" stroke-linecap="round" transform="rotate(-90 32 32)"/><text x="32" y="36" text-anchor="middle" font-size="13" font-weight="800" fill="${ink}">${esc(label)}</text></svg>`;
+  }
+
+  // waterfall for OEE: availability, performance, quality
+  function waterfall(a, p, q, w = 300, h = 120) {
+    const steps = [{ k: "Availability", v: a }, { k: "Performance", v: p }, { k: "Quality", v: q }];
+    const vals = [100, a, a * p / 100, a * p * q / 10000];
+    const Y = (v) => 10 + (1 - v / 100) * (h - 34), slot = w / 4, bw = slot * 0.6;
+    let g = "";
+    [100, 75, 50, 25].forEach((v) => g += `<line x1="0" x2="${w}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="${grid}"/>`);
+    const labels = ["Planned", "Availability", "Performance", "OEE"];
+    vals.forEach((v, i) => { const x = i * slot + (slot - bw) / 2; const prev = i ? vals[i - 1] : 100; const loss = prev - v; g += `<rect x="${x}" y="${Y(v).toFixed(1)}" width="${bw}" height="${(Y(0) - Y(v)).toFixed(1)}" fill="${i === 3 ? "var(--accent)" : "var(--accent-line)"}" rx="2"/>`; if (i && loss > 0.5) g += `<rect x="${x}" y="${Y(prev).toFixed(1)}" width="${bw}" height="${(Y(v) - Y(prev)).toFixed(1)}" fill="var(--bad)" opacity=".55" rx="2"/>`; g += `<text x="${x + bw / 2}" y="${(Y(v) - 4).toFixed(1)}" text-anchor="middle" font-size="10" font-weight="800" fill="${ink}">${v.toFixed(0)}%</text><text x="${x + bw / 2}" y="${h - 4}" text-anchor="middle" font-size="9.5" fill="${txt}">${labels[i]}</text>`; });
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="OEE waterfall">${g}</svg>`;
+  }
+
+  // heatmap rows x cols
+  function heat(rows, o = {}) {
+    const cw = o.cw || 18, chh = o.ch || 16, pl = 46, pt = 16, max = Math.max(1, ...rows.flat());
+    const w = pl + rows[0].length * cw + 4, h = pt + rows.length * chh + 4;
+    let g = "";
+    rows[0].forEach((_, c) => { if (c % 3 === 0) g += `<text x="${pl + c * cw + cw / 2}" y="11" text-anchor="middle" font-size="9" fill="${txt}">${String(c).padStart(2, "0")}</text>`; });
+    rows.forEach((r, i) => { g += `<text x="${pl - 6}" y="${pt + i * chh + chh / 2 + 3.5}" text-anchor="end" font-size="9.5" fill="${txt}">${esc(o.rowLabels ? o.rowLabels[i] : i)}</text>`; r.forEach((v, c) => g += `<rect x="${pl + c * cw + 1}" y="${pt + i * chh + 1}" width="${cw - 2}" height="${chh - 2}" rx="2" fill="${v ? "var(--bad)" : "var(--grid)"}" opacity="${v ? (0.25 + 0.75 * v / max).toFixed(2) : 1}"/>`); });
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(o.label || "heatmap")}">${g}</svg>`;
+  }
+
+  // gantt-like phase bars: rows [{k, fixed, actual, color}], scale minutes
+  function phaseBars(rows, total, w = 620) {
+    const pl = 170, rowH = 26, h = rows.length * rowH + 26, X = (m) => pl + m / total * (w - pl - 60);
+    let g = ""; let fx = 0, ax = 0;
+    for (let m = 0; m <= total; m += 10) g += `<line x1="${X(m).toFixed(1)}" x2="${X(m).toFixed(1)}" y1="14" y2="${h - 10}" stroke="${grid}"/><text x="${X(m).toFixed(1)}" y="10" text-anchor="middle" font-size="9" fill="${txt}">${m}</text>`;
+    rows.forEach((r, i) => {
+      const y = 18 + i * rowH;
+      g += `<text x="${pl - 8}" y="${y + 11}" text-anchor="end" font-size="10" font-weight="600" fill="${ink}">${esc(r.k)}</text>`;
+      g += `<rect x="${X(fx).toFixed(1)}" y="${y}" width="${(X(fx + r.fixed) - X(fx)).toFixed(1)}" height="7" rx="2" fill="${grid}"/>`;
+      g += `<rect x="${X(ax).toFixed(1)}" y="${y + 9}" width="${(X(ax + r.actual) - X(ax)).toFixed(1)}" height="7" rx="2" fill="${r.color}"/>`;
+      g += `<text x="${(X(ax + r.actual) + 4).toFixed(1)}" y="${y + 16}" font-size="9" font-weight="700" fill="${ink}">${r.actual} min</text>`;
+      fx += r.fixed; ax += r.actual;
+    });
+    g += `<text x="${X(fx).toFixed(1)}" y="${h - 1}" text-anchor="end" font-size="9" fill="${txt}">fixed recipe ${fx} min</text>`;
+    return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="CIP phases">${g}</svg>`;
+  }
+
+  // simple histogram from values
+  function hist(values, bins, o = {}) {
+    const lo = o.lo != null ? o.lo : Math.min(...values), hi = o.hi != null ? o.hi : Math.max(...values), bw = (hi - lo) / bins;
+    const counts = new Array(bins).fill(0); values.forEach((v) => { const i = Math.min(bins - 1, Math.max(0, Math.floor((v - lo) / bw))); counts[i]++; });
+    const cats = counts.map((_, i) => (lo + i * bw).toFixed(o.dec || 0));
+    return bars({ cats, series: [{ data: counts, color: o.color || "var(--accent)" }], h: o.h || 140, xEvery: 6, label: o.label });
+  }
+
+  return { line, bars, hbars, spark, ring, waterfall, heat, phaseBars, hist, esc };
+})();
+
+
+// ===== ui.js =====
+// ---------- UI helpers, router, drawer, toast ----------
+const UI = (() => {
+  const esc = CH.esc, f = SIM.fmtN;
+  const pill = (s, t) => `<span class="pill ${s}">${esc(t)}</span>`;
+  const dot = (s) => `<span class="dot ${s}"></span>`;
+  const kpi = (l, v, d, o = {}) => `<div class="card kpi ${o.c || "c3"} ${o.cls || ""}"><div class="l">${esc(l)}</div><div class="v">${v}${o.unit ? `<small>${esc(o.unit)}</small>` : ""}</div>${d ? `<div class="d ${o.dir || ""}">${d}</div>` : ""}</div>`;
+  const card = (title, body, o = {}) => `<div class="card ${o.c || "c6"} ${o.cls || ""}" ${o.id ? `id="${o.id}"` : ""}><div class="ch"><h3>${esc(title)}</h3>${o.sub ? `<span class="sub">${esc(o.sub)}</span>` : ""}${o.r ? `<span class="r">${o.r}</span>` : ""}</div>${body}</div>`;
+  const tile = (l, v, d, s = "", unit = "") => `<div class="tile ${s}"><div class="l">${esc(l)}</div><div class="v">${v}${unit ? `<small>${esc(unit)}</small>` : ""}</div>${d ? `<div class="d">${d}</div>` : ""}</div>`;
+  // cols: [{h, n, f(row) -> html}] ; rows ; o.row(row) -> extra attrs
+  const table = (cols, rows, o = {}) => `<div class="scroll"><table class="tbl">${o.noHead ? "" : `<thead><tr>${cols.map((c) => `<th class="${c.n ? "n" : ""}">${esc(c.h)}</th>`).join("")}</tr></thead>`}<tbody>${rows.map((r) => `<tr ${o.row ? o.row(r) : ""}>${cols.map((c) => `<td class="${c.n ? "n" : ""} ${c.k ? "k" : ""}">${c.f(r)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  const tabs = (view, items, active) => `<div class="tabs">${items.map((t) => `<button data-tab="${view}:${t[0]}" class="${t[0] === active ? "on" : ""}">${esc(t[1])}</button>`).join("")}</div>`;
+  const seg = (key, items, active) => `<div class="seg">${items.map((t) => `<button data-seg="${key}:${t[0]}" class="${t[0] === active ? "on" : ""}">${esc(t[1])}</button>`).join("")}</div>`;
+  const legend = (items) => `<div class="legend">${items.map((i) => `<span><i style="background:${i[0]}"></i>${esc(i[1])}</span>`).join("")}</div>`;
+  const stateOf = (v, lo, hi) => (v < lo || v > hi) ? "bad" : (v < lo + (hi - lo) * 0.1 || v > hi - (hi - lo) * 0.1) ? "warn" : "ok";
+  const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+  const progress = (p, cls = "") => `<i class="${cls}" style="display:block;height:6px;border-radius:3px;background:var(--grid);overflow:hidden"><i style="display:block;height:100%;width:${Math.min(100, p)}%;background:var(--accent)"></i></i>`;
+  let toastT;
+  const toast = (m) => { const t = document.getElementById("toast"); t.textContent = m; t.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("on"), 2200); };
+  const drawer = {
+    open(title, html) { const d = document.getElementById("drawer"); d.querySelector(".dh b").textContent = title; d.querySelector(".db").innerHTML = html; d.classList.add("open"); },
+    close() { document.getElementById("drawer").classList.remove("open"); },
+  };
+  return { esc, f, pill, dot, kpi, card, tile, table, tabs, seg, legend, stateOf, pct, progress, toast, drawer };
+})();
+
+// ---------- App state and router ----------
+const APP = {
+  state: { view: "home", tab: { quality: "vision", production: "lines", trace: "pallets", maint: "events", cip: "live" }, seg: { period: "shift" }, confirmed: {}, wo: null, cipIn: null, search: "" },
+  views: {},
+  titles: { home: ["Plant overview", "Pottsville"], quality: ["Quality", "Vision, zones, pallet rule, release"], production: ["Production and OEE", "Lines, losses, crews"], trace: ["Traceability and ERP", "Pallets, inventory, orders, lots"], maint: ["Downtime and maintenance", "Events, insights, plan, work orders"], cip: ["CIP monitoring", "Spectral endpoints, savings"] },
+  go(view, tab) { this.state.view = view; if (tab) this.state.tab[view] = tab; this.render(); document.querySelector(".content").scrollTop = 0; try { localStorage.setItem("frutero-view", view); } catch (e) {} },
+  render() {
+    const s = this.state, v = this.views[s.view];
+    document.querySelectorAll(".rail .nav").forEach((b) => b.classList.toggle("on", b.dataset.go === s.view));
+    const t = this.titles[s.view]; document.getElementById("crumb").innerHTML = `${UI.esc(t[0])} <span>· ${UI.esc(t[1])}</span>`;
+    document.getElementById("content").innerHTML = v ? v(s) : "";
+    this.live();
+  },
+  live() {
+    const L = SIM.lines.L1;
+    const map = { clock: () => SIM.hh(SIM.now()) + ":" + String(SIM.now().getSeconds()).padStart(2, "0"), l1speed: () => UI.f(L.speed), l1lh: () => UI.f(L.freezerLh), l1tunnel: () => L.tunnel.toFixed(1), cipT: () => SIM.circuits[0].t.toFixed(1), cipTurb: () => SIM.cipSensors.outlet[4].v.toFixed(1), cipRes: () => SIM.cipSensors.outlet[5].v.toFixed(2), cipTin: () => SIM.cipSensors.inlet[0].v.toFixed(1), cipTout: () => SIM.cipSensors.outlet[0].v.toFixed(1) };
+    for (const z of SIM.zones) map["z_" + z.id] = () => z.now.toFixed(1);
+    document.querySelectorAll("[data-live]").forEach((el) => { const fn = map[el.dataset.live]; if (fn) el.textContent = fn(); });
+  },
+};
+
+
+// ===== views1.js =====
+// ---------- Views: Home, Quality ----------
+(() => {
+  const { esc, f, pill, dot, kpi, card, tile, table, tabs, legend, pct } = UI;
+  const S = SIM;
+
+  // ---- plant map (simplified, live) ----
+  function plantMap() {
+    const L1 = S.lines.L1, L2 = S.lines.L2, z = Object.fromEntries(S.zones.map((x) => [x.id, x]));
+    const room = (x, y, w, h, name, sub, go, fill = "var(--panel2)") => `<g class="hot" data-go="${go}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${fill}" stroke="var(--line)" stroke-width="1"/><text x="${x + 8}" y="${y + 15}" font-size="10.5" font-weight="800" fill="var(--ink)">${esc(name)}</text>${sub ? `<text x="${x + 8}" y="${y + 27}" font-size="9.5" fill="var(--muted)">${esc(sub)}</text>` : ""}</g>`;
+    const chip = (x, y, text, s = "ok") => { const col = s === "ok" ? "var(--good)" : s === "warn" ? "var(--warn)" : s === "bad" ? "var(--bad)" : "var(--accent)"; const w = text.length * 5.6 + 14; return `<g><rect x="${x}" y="${y}" width="${w.toFixed(0)}" height="16" rx="8" fill="${col}" opacity=".14"/><circle cx="${x + 8}" cy="${y + 8}" r="3" fill="${col}"/><text x="${x + 14}" y="${y + 11.5}" font-size="9.5" font-weight="700" fill="${col}">${esc(text)}</text></g>`; };
+    const lineBlock = (x, y, L, go) => `<g class="hot" data-go="${go}"><rect x="${x}" y="${y}" width="200" height="56" rx="4" fill="var(--panel)" stroke="${L.state === "running" ? "var(--good)" : "var(--warn)"}" stroke-width="1.2"/><text x="${x + 8}" y="${y + 15}" font-size="10.5" font-weight="800" fill="var(--ink)">${esc(L.name)}</text><text x="${x + 8}" y="${y + 28}" font-size="9.5" fill="var(--muted)">${esc(L.product)} · ${esc(L.machine)}</text>${chip(x + 6, y + 35, L.state === "running" ? `Running ${f(L.speed)} pcs/h` : `Stopped ${L.stopMin} min · ${L.stop}`, L.state === "running" ? "ok" : "warn")}</g>`;
+    return `<svg viewBox="0 0 700 330" role="img" aria-label="Pottsville plant map, live">
+      <rect x="2" y="2" width="696" height="326" rx="6" fill="var(--panel)" stroke="var(--ink)" stroke-width="1.2"/>
+      ${room(8, 8, 86, 96, "Offices", "QA lab, GMP entry", "home")}
+      ${room(8, 108, 86, 74, "Mix room", "300-gal batches", "quality")}${chip(14, 150, "Batch MB-0314-03", "info")}
+      ${room(8, 186, 86, 64, "CIP station", "", "cip")}${chip(14, 212, "CIP-1 caustic", "info")}
+      ${room(8, 254, 86, 68, "Parts, edge", "server, switches", "maint")}
+      ${room(98, 8, 300, 314, "Processing room", "9,325 sq ft", "production")}
+      ${lineBlock(108, 48, L1, "production")}${chip(316, 55, `Tunnel ${L1.tunnel.toFixed(0)} °F`, "ok")}${chip(316, 75, `Freezer ${f(L1.freezerLh)} L/h`, "ok")}
+      ${lineBlock(108, 150, L2, "production")}${chip(316, 157, `Tunnel ${L2.tunnel} °F`, "ok")}${chip(316, 177, `${S.shift.L2.cases} cases`, "info")}
+      ${chip(108, 230, "Cameras C1 to C6 live", "ok")}${chip(108, 250, `Quality ${S.shift.L1.q}% / ${S.shift.L2.q}%`, "ok")}${chip(108, 270, "Off-centre stick above limit, C1", "warn")}
+      ${room(402, 8, 128, 314, "Packaging", "case packing, palletizing", "trace")}
+      ${chip(408, 40, `${S.shift.L1.cases + S.shift.L2.cases} cases overnight`, "info")}${chip(408, 60, "46 pallets built", "info")}${chip(408, 80, "P-0412 on QA hold", "bad")}${chip(408, 100, "RFID label G1", "info")}
+      ${room(534, 8, 92, 96, "Cooler 40 °F", "ingredients, mix", "quality", "var(--accent-soft)")}${chip(540, 50, `${z.cooler.now.toFixed(1)} °F`, z.cooler.now > 45 ? "bad" : "ok")}${chip(540, 70, "86 of 120 pallets", "info")}
+      ${room(534, 108, 92, 50, "Hot box", "tempering", "quality", "var(--warn-bg)")}${chip(540, 136, `${z.hotbox.now.toFixed(1)} °F`, "ok")}
+      ${room(534, 162, 92, 160, "Freezer −20 °F", "552 positions", "trace", "var(--accent-soft)")}${chip(540, 200, `${z.freezer.now.toFixed(1)} °F`, z.freezer.now > -15 ? "bad" : "ok")}${chip(540, 220, "318 pallets", "info")}${chip(540, 240, "RFID portal G2", "info")}${chip(540, 260, "Doors closed", "ok")}
+      ${room(630, 8, 62, 314, "Dock", "", "trace")}${chip(634, 40, "G3", "info")}${chip(634, 60, "3 trucks", "info")}${chip(634, 80, `${z.dock.now.toFixed(0)} °F`, "ok")}
+      <text x="104" y="320" font-size="9" fill="var(--faint)">Schematic from layout Rev 5, not to scale. Click a room to open its module.</text>
+    </svg>`;
+  }
+
+  APP.views.home = () => {
+    const sh = S.shift, out = sh.L1.out + sh.L2.out, plan = sh.L1.plan + sh.L2.plan;
+    const alerts = S.alerts.filter((a) => a.open);
+    return `
+    <div class="ph"><div><h1>Tuesday 14 March 2028, night shift ending</h1><p>${esc(sh.label)}, ${esc(sh.crew)} led by ${esc(sh.lead)}. Every figure on this page comes from the machines, cameras and sensors; nothing is typed in.</p></div>
+      <div class="tools"><button class="btn" data-go="quality">Morning report</button><button class="btn pri" data-bruce="What happened overnight?">Ask Bruce what happened</button></div></div>
+    <div class="grid">
+      ${kpi("Output overnight", f(out), `plan ${f(plan)} · <b>${pct(out, plan)}%</b> of plan`, { unit: "pcs" })}
+      ${kpi("OEE, both lines", "79%", `Line 1 <b>${sh.L1.oee}%</b> · Line 2 <b>${sh.L2.oee}%</b>`)}
+      ${kpi("First-pass quality", "98.1%", `${f(sh.L1.rejects + sh.L2.rejects)} rejects counted by camera`)}
+      ${kpi("Pallets inside 20 min", `${sh.pallets.inside20}<small>of ${sh.pallets.built}</small>`, `avg ${sh.pallets.avgToFreezer} min to the freezer · <b>1 on hold</b>`, { dir: "" })}
+      ${card("The plant, live", `<div class="plan">${plantMap()}</div>`, { c: "c8", sub: "rooms from layout Rev 5", r: `${dot("ok")}running ${dot("warn")}stopped ${dot("bad")}attention` })}
+      <div class="card c4"><div class="ch"><h3>Needs attention</h3><span class="r">${alerts.length} open</span></div>
+        <ul class="list">${S.alerts.map((a) => `<li><span class="t">${a.t}</span><span class="m"><b>${dot(a.sev)}${esc(a.title)}</b><span>${esc(a.where)}${a.note ? " · " + esc(a.note) : ""}${a.open ? "" : " · closed"}</span></span></li>`).join("")}</ul>
+        <div class="ch" style="margin-top:12px"><h3>Overnight in plain words</h3><span class="r"><span class="pill vio">Bruce</span></span></div>
+        <p class="note">Line 1 ran Mango stick 90 ml at 16,900 pcs/h and reached <b>94% of plan</b>; the gap is three stops, the longest a 14-minute ML8 reel change at 04:52. Line 2 ran Tender coconut bars at 81% OEE and stopped at 06:08 on an R2 film splice, 4 minutes so far. Quality held at 98.1%; off-centre sticks on lane 3 crossed the limit at 05:52 and the inserter is flagged. Every cold room stayed in band; the cooler door was open 11 minutes at 02:14 and was acknowledged in 3. <b>One pallet, P-0412, waited 23 minutes</b> at end packaging and is on QA hold with its clip. CIP-1 is in the caustic wash and is tracking 19 minutes early.</p>
+        <div class="row" style="margin-top:8px"><button class="btn sm" data-go="quality" data-tab-to="pallet">See the pallet</button><button class="btn sm" data-go="maint">See the stops</button><button class="btn sm" data-bruce="Why did line 1 miss plan?">Why did line 1 miss plan?</button></div>
+      </div>
+      ${card("Output against plan, last 24 hours", CH.bars({ cats: S.hourLabels, series: [{ data: S.out24.L1, color: "var(--accent)", name: "Line 1" }, { data: S.out24.L2, color: "var(--violet)", name: "Line 2" }], plan: S.hourLabels.map(() => 15750), h: 190, xEvery: 8 }) + legend([["var(--accent)", "Line 1, pcs/h"], ["var(--violet)", "Line 2, pcs/h"], ["var(--ink)", "Line 1 plan 15,750"]]), { c: "c8", sub: "pieces per hour from the wrapper counters" })}
+      <div class="card c4"><div class="ch"><h3>Cold rooms now</h3><span class="r">live</span></div><div class="tiles">
+        ${S.zones.slice(0, 6).map((z) => tile(z.name.split(",")[0], `<span data-live="z_${z.id}">${z.now.toFixed(1)}</span>`, z.set != null ? `set ${z.set} °F` : "", z.alertAbove != null && z.now > z.alertAbove ? "bad" : "ok", "°F")).join("")}
+      </div><p class="note" style="margin-top:8px">Alert when the freezer is above −15 °F for 15 minutes or a door is open 5 minutes; the shift lead by push and SMS, the owner if not acknowledged in 15.</p></div>
+    </div>`;
+  };
+
+  // ---- Quality ----
+  const camStrip = () => `<div class="flow">${[["C1", "After cutting", "shape, stick, count", "ok"], ["C2", "ML8 infeed, 2 cams", "coating", "ok"], ["C3", "ML8 outlet", "count per lane, bags", "ok"], ["C4", "After cutting, L2", "shape, count", "ok"], ["C5", "Pocket conveyor", "coating", "ok"], ["C6", "R2 outlet", "count, bags", "ok"], ["C7, C8", "Case packing", "cases/h, short cases", "warn"]].map((c) => `<div class="st ${c[3]}"><b>${c[0]} · ${c[1]}</b><span>${c[2]}</span></div>`).join("")}</div>`;
+  const defectImg = (g) => {
+    const stick = g.kind === "stick" || g.kind === "nostick";
+    const body = stick ? `<rect x="52" y="22" width="46" height="70" rx="12" fill="#F2B544"/><rect x="52" y="22" width="46" height="70" rx="12" fill="#6B3A1E" opacity=".9"/><rect x="58" y="30" width="34" height="56" rx="9" fill="#F2B544" opacity=".35"/>${g.kind === "stick" ? `<rect x="${73 + g.off}" y="86" width="6" height="30" rx="2" fill="#E8D5B5"/><line x1="76" y1="86" x2="76" y2="116" stroke="var(--bad)" stroke-dasharray="2 2"/>` : `<rect x="73" y="86" width="6" height="30" rx="2" fill="none" stroke="var(--bad)" stroke-dasharray="2 2"/>`}` :
+      g.kind === "coat" ? `<rect x="52" y="22" width="46" height="70" rx="12" fill="#6B3A1E"/><ellipse cx="80" cy="48" rx="11" ry="9" fill="#F2B544"/>` :
+      g.kind === "coatbar" ? `<rect x="40" y="40" width="72" height="34" rx="6" fill="#6B3A1E"/><ellipse cx="88" cy="58" rx="12" ry="7" fill="#F9E7C6"/>` :
+      g.kind === "broken" ? `<rect x="40" y="40" width="40" height="34" rx="6" fill="#6B3A1E"/><rect x="86" y="44" width="26" height="30" rx="6" fill="#6B3A1E" transform="rotate(8 99 59)"/>` :
+      `<rect x="36" y="36" width="80" height="44" rx="4" fill="#E9EEF5" stroke="#B9C5D6"/><rect x="42" y="42" width="68" height="32" rx="3" fill="#D6DEE9"/><rect x="48" y="48" width="68" height="32" rx="3" fill="#C5D0E0" opacity=".8"/>`;
+    return `<svg viewBox="0 0 152 120" role="img" aria-label="${esc(g.cls)}"><rect width="152" height="120" fill="#1E2A3A"/><rect x="0" y="100" width="152" height="20" fill="#2A3A50"/>${body}<rect x="${stick ? 48 : 34}" y="${stick ? 18 : 34}" width="${stick ? 54 : 84}" height="${stick ? 100 : 48}" fill="none" stroke="var(--lime)" stroke-width="1.5" stroke-dasharray="4 2"/><text x="6" y="12" font-size="8" fill="#B9C7DA">${g.cam} · lane ${g.lane} · ${g.t}</text><text x="146" y="12" font-size="8" text-anchor="end" fill="var(--lime)">${(g.conf * 100).toFixed(0)}%</text></svg>`;
+  };
+
+  function qVision(s) {
+    const sh = S.shift;
+    const rows = S.defects.map((d) => ({ ...d, state: d.n > d.limit ? "bad" : d.n > d.limit * 0.9 ? "warn" : "ok" }));
+    return `
+    <div class="grid">
+      ${kpi("First-pass quality, line 1", `${sh.L1.q}%`, `${f(sh.L1.rejects)} rejects · stick ${f(sh.L1.rej.stick)}, coating ${f(sh.L1.rej.coating)}, wrap ${f(sh.L1.rej.wrap)}`)}
+      ${kpi("First-pass quality, line 2", `${sh.L2.q}%`, `${f(sh.L2.rejects)} rejects · shape ${f(sh.L2.rej.shape)}, coating ${f(sh.L2.rej.coating)}, wrap ${f(sh.L2.rej.wrap)}`)}
+      ${kpi("Pieces counted overnight", f(sh.L1.out + sh.L2.out), "every piece, from the first run")}
+      ${kpi("Model accuracy", `${S.model.accuracy}%`, `missed ${S.model.missed}% · false alarms ${S.model.false}% · ${S.model.classes} classes`)}
+      <div class="card c12"><div class="ch"><h3>Cameras on both lines</h3><span class="sub">washdown cameras on independent stands, triggered by the machines</span><span class="r">images stay on the edge server for 30 days</span></div>${camStrip()}</div>
+      ${card("Rejects by class, line 1", CH.bars({ cats: S.shiftHours, series: [{ data: S.rejHourly.L1.map((r) => r.stick), color: "var(--accent)" }, { data: S.rejHourly.L1.map((r) => r.coating), color: "var(--violet)" }, { data: S.rejHourly.L1.map((r) => r.wrap), color: "var(--teal)" }], stacked: true, h: 160 }) + legend([["var(--accent)", "Stick"], ["var(--violet)", "Coating"], ["var(--teal)", "Wrap"]]), { sub: "per hour, night shift" })}
+      ${card("Rejects by class, line 2", CH.bars({ cats: S.shiftHours, series: [{ data: S.rejHourly.L2.map((r) => r.shape), color: "var(--accent)" }, { data: S.rejHourly.L2.map((r) => r.coating), color: "var(--violet)" }, { data: S.rejHourly.L2.map((r) => r.wrap), color: "var(--teal)" }], stacked: true, h: 160 }) + legend([["var(--accent)", "Shape"], ["var(--violet)", "Coating"], ["var(--teal)", "Wrap"]]), { sub: "per hour, night shift" })}
+      ${card("Defect classes, this shift", table([{ h: "Camera", f: (r) => `<b>${r.cam}</b> <span class="s">${esc(r.where)}</span>` }, { h: "Class", f: (r) => esc(r.cls), k: true }, { h: "Count", n: true, f: (r) => f(r.n) }, { h: "Rate", n: true, f: (r) => r.rate.toFixed(2) + "%" }, { h: "Limit", n: true, f: (r) => f(r.limit) }, { h: "Trend, 8 h", f: (r) => CH.spark(r.trend, r.state === "bad" ? "var(--bad)" : "var(--accent)") }, { h: "", f: (r) => pill(r.state, r.state === "bad" ? "over limit" : r.state === "warn" ? "near limit" : "in limit") }], rows), { c: "c7", sub: "counts per shift; a class over its limit alerts with the image" })}
+      <div class="card c5"><div class="ch"><h3>Flagged for QA review</h3><span class="r">${S.flagged.filter((g) => !s.confirmed[g.id]).length} waiting</span></div>
+        <div class="imgs">${S.flagged.map((g) => `<div class="img ${s.confirmed[g.id] ? "done" : ""}">${defectImg(g)}<div class="cap"><b>${esc(g.cls)}</b>${g.id} · ${s.confirmed[g.id] ? `<span class="pill ${s.confirmed[g.id] === "ok" ? "ok" : "mute"}">${s.confirmed[g.id] === "ok" ? "confirmed" : "dismissed"}</span>` : "awaiting QA"}</div>${s.confirmed[g.id] ? "" : `<div class="acts"><button class="btn sm" data-act="confirm:${g.id}">Confirm</button><button class="btn sm ghost" data-act="dismiss:${g.id}">Not a defect</button></div>`}</div>`).join("")}</div>
+        <p class="note" style="margin-top:8px">Confirmed and dismissed images retrain the models in the weekly cycle. Drift is <b>${S.model.drift}</b>; last retrain ${S.model.retrained} on ${f(S.model.images30d)} images.</p></div>
+    </div>`;
+  }
+
+  function qZones() {
+    const zs = S.zones, byId = Object.fromEntries(zs.map((z) => [z.id, z]));
+    const lab = S.series(48, (i) => { const d = new Date(S.now().getTime() - (47 - i) * 1800e3); return S.hh(d); });
+    const zc = (z) => card(z.name, CH.line({ series: [{ data: z.trend, color: z.id === "cooler" || z.id === "dock" ? "var(--teal)" : z.id === "choc" || z.id === "mix" || z.id === "hotbox" ? "var(--warn)" : "var(--accent)", area: true }], limits: z.alertAbove != null ? [{ y: z.alertAbove, label: `alert above ${z.alertAbove} °F` }] : [], band: z.band ? { lo: z.band[0], hi: z.band[1] } : null, xLabels: lab, h: 150, xEvery: 6, fmt: (v) => v.toFixed(0) }) + `<div class="ribbon" style="margin-top:6px"><b>${esc(z.sensors)}</b><span>· alerts to ${esc(z.who)}</span></div>`, { c: "c6", sub: "last 24 hours, °F", r: `<span data-live="z_${z.id}">${z.now.toFixed(1)}</span> °F now` });
+    return `
+    <div class="grid">
+      <div class="card c12"><div class="ch"><h3>Every zone, now</h3><span class="sub">temperature against its set point; limits proposed for Frutero's QA to confirm</span></div><div class="tiles">
+        ${zs.map((z) => tile(z.name, `<span data-live="z_${z.id}">${z.now.toFixed(1)}</span>`, z.band ? `band ${z.band[0]} to ${z.band[1]} °F` : z.alertAbove != null ? `alert above ${z.alertAbove} °F` : "", z.alertAbove != null ? (z.now > z.alertAbove ? "bad" : "ok") : (z.band && (z.now < z.band[0] || z.now > z.band[1]) ? "warn" : "ok"), "°F")).join("")}
+      </div></div>
+      ${kpi("Time in band, 24 h", "99.6%", "all cold rooms together; 11 minutes out, cooler door")}
+      ${kpi("Door events", "2", "cooler 02:14 (11 min), dock door 2 at 05:48 (loading)")}
+      ${kpi("Defrost cycles", "3", "freezer evaporators, all within the set duration")}
+      ${kpi("Pallets in cold rooms", "416", "freezer 318 · cooler 86 · hot box 12")}
+      ${zc(byId.freezer)}${zc(byId.cooler)}${zc(byId.tunnel1)}${zc(byId.choc)}
+      ${card("Zone events, night shift", `<ul class="list">${S.zoneEvents.map((e) => `<li><span class="t">${e.t}</span><span class="m"><b>${dot(e.sev)}${esc(e.zone)}: ${esc(e.what)}</b><span>${esc(e.detail)}</span></span></li>`).join("")}</ul>`, { c: "c6" })}
+      ${card("Why these are quality numbers", `<p class="note">Ice cream that melts and refreezes is legal to sell and wrong to sell. The cold rooms, the hardening tunnels, the chocolate tanks and the pasteuriser all decide whether a piece is right, so they sit in the quality section with the cameras. The freezer alerts above −15 °F for 15 minutes; tunnels alert warmer than −31 °F while running; chocolate outside 110 to 116 °F shows beside the coating rejects on line 1; the pasteuriser chart is the legal record and it lives here too.</p><div class="row" style="margin-top:8px"><button class="btn sm" data-tab="quality:pallet">Pallet rule</button><button class="btn sm" data-tab="quality:release">Release and holds</button></div>`, { c: "c6" })}
+    </div>`;
+  }
+
+  function qPallet() {
+    const ps = S.pallets, over = ps.filter((p) => p.outside > 20);
+    const steps = [["1 · First case", "Clock starts, C7 or C8", "The timer starts when the first case lands on the pallet, from the case count or a case scan. A hand-built pallet takes 7 to 10 minutes, and that time counts."], ["2 · Label", "RFID SSCC at G1", "The licence plate goes on at the end of the build; the printer is fed from the ERP order."], ["3 · Freezer door", "Read at G2", "The RFID portal at the freezer door closes the timer; a freezer-rated handheld is the fallback."], ["4 · Over the limit", "Alert at 20 minutes", "Push alert to the shift lead with the pallet, where it is waiting and the clip from C8 or C9."], ["5 · Shipping", "Scanned out, G3", "A pallet that reaches the dock without a freezer entry raises an alert before it is loaded."]];
+    return `
+    <div class="grid">
+      ${kpi("Pallets built", String(ps.length), "night shift, both lines")}
+      ${kpi("Inside 20 minutes", `${ps.length - over.length}<small>of ${ps.length}</small>`, `${over.length} over the limit, on QA hold`)}
+      ${kpi("Average to the freezer", "11.4", "minutes from first case to the G2 read", { unit: "min" })}
+      ${kpi("Longest wait", "23", "P-0412 at 03:40, end packaging", { unit: "min", cls: "alert" })}
+      <div class="card c12"><div class="ch"><h3>The 20-minute rule</h3><span class="sub">the clock starts at the first case, not at the label</span></div><div class="steps">${steps.map((st, i) => `<div class="${i < 3 ? "done" : ""}"><div class="sn">${st[0]}</div><b>${st[1]}</b><p>${st[2]}</p></div>`).join("")}</div></div>
+      ${card("Minutes outside the freezer, per pallet", CH.hist(ps.map((p) => p.outside), 10, { lo: 4, hi: 24, h: 150, label: "histogram" }) + `<p class="note">Most pallets reach the freezer in 8 to 14 minutes. The limit of 20 minutes is Mike's own rule from the call and is set here; QA can change it.</p>`, { c: "c6", sub: "night shift" })}
+      ${card("Over the limit", table([{ h: "Pallet", k: true, f: (p) => `${p.id} <span class="s">${p.sscc}</span>` }, { h: "Product", f: (p) => `${esc(p.sku)} <span class="s">${p.lot} · ${p.cases} cases</span>` }, { h: "Built", n: true, f: (p) => p.built }, { h: "Freezer in", n: true, f: (p) => p.g2 || "—" }, { h: "Outside", n: true, f: (p) => `<b style="color:var(--bad)">${p.outside} min</b>` }, { h: "Action", f: (p) => `${pill("bad", "QA hold")} <button class="btn sm" data-drawer="pallet:${p.id}">Open</button>` }], over) + `<p class="note" style="margin-top:8px">The clip from camera C8 is attached to the alert. The morning report lists every pallet over the limit with minutes outside, where it waited and who acknowledged.</p>`, { c: "c6" })}
+      ${card("Average time to freezer by shift, this week", CH.hbars([{ k: "Crew A, days", v: 9.8, t: "9.8 min", c: "good" }, { k: "Crew B, evenings", v: 10.6, t: "10.6 min", c: "good" }, { k: "Crew C, nights", v: 11.4, t: "11.4 min" }]), { c: "c6" })}
+      ${card("Pallets flagged for a QA check before release", table([{ h: "Pallet", k: true, f: (p) => p.id }, { h: "Reason", f: (p) => `${p.outside} min outside at ${p.built}` }, { h: "QA", f: (p) => `<button class="btn sm" data-act="release:${p.id}">Release</button> <button class="btn sm ghost" data-act="scrap:${p.id}">Rework</button>` }], over), { c: "c6" })}
+    </div>`;
+  }
+
+  function qRelease() {
+    const w = S.series(240, () => 90.4 + S.nz(1.4) + (S.rnd() < 0.03 ? -3 : 0));
+    return `
+    <div class="grid">
+      ${kpi("Fill weight, line 1", "90.4<small>g</small>", "target 90 g · Cpk 1.41 · 2 light packs rejected")}
+      ${kpi("Short cases", "2", "flagged by C7 this shift, both corrected")}
+      ${kpi("Metal detector", "0", "rejects; test pieces passed 22:00 and 02:00")}
+      ${kpi("Lots waiting for release", "2", "L28-0314-A, L28-0314-B")}
+      ${card("Fill weight distribution, line 1", CH.hist(w, 14, { lo: 85, hi: 95, h: 160, label: "fill weight histogram", dec: 0 }) + `<p class="note">Checkweigher at the ML8 outlet; the light tail at 87 g is the overrun drift that the freezer page shows, overrun 98 percent against 100 set.</p>`, { c: "c7", sub: "grams per pack, this shift" })}
+      ${card("Lot release", table([{ h: "Lot", k: true, f: (r) => r[0] }, { h: "Product", f: (r) => r[1] }, { h: "Checks", f: (r) => r[2] }, { h: "", f: (r) => r[3] }], [["L28-0314-A", "Mango stick 90 ml", "Pasteuriser record, cold chain, vision, weight: all in", `${pill("ok", "ready")} <button class="btn sm" data-act="lotrelease:L28-0314-A">Release</button>`], ["L28-0314-B", "Tender coconut bar 31 ml", "P-0412 on hold, the rest in", `${pill("warn", "1 pallet held")}`], ["L28-0313-A", "Chiku stick 90 ml", "Released 13 Mar 07:10 by QA", pill("mute", "released")]]), { c: "c5" })}
+      ${card("The release record, one place", `<p class="note">For every lot the app keeps the pasteuriser chart, the mix batch, the cold-room minutes, the camera counts per class, the checkweigher statistics, the metal detector tests and every pallet's time outside the freezer. A retailer audit or a recall question is answered from here in seconds, not from four binders.</p>`, { c: "c5" })}
+      ${card("Holds and reworks, 30 days", CH.hbars([{ k: "Pallet time over 20 min", v: 4, t: "4" }, { k: "Coating below limit, lot held", v: 1, t: "1" }, { k: "Light packs, rework", v: 2, t: "2" }, { k: "Checkweigher drift", v: 1, t: "1" }]), { c: "c7" })}
+    </div>`;
+  }
+
+  APP.views.quality = (s) => {
+    const t = s.tab.quality;
+    return `<div class="ph"><div><h1>Quality</h1><p>Cameras count every piece and classify what is wrong with it; the cold rooms, tunnels, chocolate tanks and pasteuriser decide whether it stays right.</p></div></div>
+      ${tabs("quality", [["vision", "Vision quality"], ["zones", "Zones and cold chain"], ["pallet", "20-minute pallet rule"], ["release", "Weight, checks and release"]], t)}
+      ${t === "vision" ? qVision(s) : t === "zones" ? qZones() : t === "pallet" ? qPallet() : qRelease()}`;
+  };
+})();
+
+
+// ===== views2.js =====
+// ---------- Views: Production and OEE, Traceability and ERP ----------
+(() => {
+  const { esc, f, pill, dot, kpi, card, tile, table, tabs, legend, pct, progress } = UI;
+  const S = SIM;
+
+  // ---- Production ----
+  const stationStrip = (L) => { const st = L.id === "L1" ? [["Freezer 2x2000", "ok"], ["Extruder, inserters", L.stop && L.stop.includes("inserter") ? "bad" : "ok"], ["Tunnel −40 °C", "ok"], ["Pick-up, enrobing", "ok"], ["ML8 wrapper", "ok"], ["Case packer", "warn"]] : [["Freezer 2x1000", "ok"], ["Extruder, cutting", "ok"], ["Tunnel, aftercooler", "ok"], ["Pick-up, enrobing", "ok"], ["R2 wrapper", L.state === "stopped" ? "bad" : "ok"], ["Case packer", "ok"]]; return `<div class="flow">${st.map((x) => `<div class="st ${x[1]}"><b>${dot(x[1])}${x[0]}</b></div>`).join("")}</div>`; };
+  const lineCard = (L) => `<div class="card c6 ${L.state === "stopped" ? "alert" : ""}"><div class="ch"><h3>${esc(L.name)}</h3><span class="r">${L.state === "running" ? pill("ok", "running") : pill("warn", `stopped ${L.stopMin} min`)}</span></div>
+    <div class="row" style="gap:16px;align-items:flex-start">
+      <div class="gauge">${CH.ring(L.speed / L.nominal * 100, L.state === "running" ? "var(--good)" : "var(--warn)", `${Math.round(L.speed / L.nominal * 100)}%`)}<div><div class="kpi"><div class="l">Speed</div><div class="v" style="font-size:20px">${L.id === "L1" ? `<span data-live="l1speed">${f(L.speed)}</span>` : f(L.speed)}<small>pcs/h</small></div><div class="d">nominal ${f(L.nominal)} · plan ${f(L.plan)}</div></div></div></div>
+      <div class="gauge">${CH.ring(L.oeeV, "var(--accent)", `${L.oeeV}%`)}<div><div class="kpi"><div class="l">OEE, this shift</div><div class="d">avail <b>${L.oee.a}</b> · perf <b>${L.oee.p}</b> · qual <b>${L.oee.q}</b></div></div></div></div>
+    </div>
+    <div class="kv" style="margin-top:10px"><span>Product</span><b>${esc(L.product)} · ${esc(L.format)}</b><span>${L.state === "running" ? "Running since" : "Stopped since"}</span><b>${L.since}${L.stop ? " · " + esc(L.stop) : ""}</b><span>Freezer</span><b>${L.id === "L1" ? `<span data-live="l1lh">${f(L.freezerLh)}</span>` : f(L.freezerLh)} L/h · overrun ${L.overrun}% (set ${L.overrunSet})</b><span>Tunnel</span><b>${L.id === "L1" ? `<span data-live="l1tunnel">${L.tunnel}</span>` : L.tunnel} °F · chain ${L.chain}%</b></div>
+    <div style="margin-top:10px">${stationStrip(L)}</div></div>`;
+
+  function pLines() {
+    return `<div class="grid">
+      ${lineCard(S.lines.L1)}${lineCard(S.lines.L2)}
+      ${card("Output per hour, line 1", CH.bars({ cats: S.hourLabels, series: [{ data: S.out24.L1, color: "var(--accent)" }], plan: S.hourLabels.map(() => 15750), h: 160, xEvery: 8 }), { sub: "last 24 h against plan 15,750" })}
+      ${card("Output per hour, line 2", CH.bars({ cats: S.hourLabels, series: [{ data: S.out24.L2, color: "var(--violet)" }], plan: S.hourLabels.map(() => 10500), h: 160, xEvery: 8 }), { sub: "last 24 h against plan 10,500" })}
+      ${card("Next on the plan", table([{ h: "When", f: (r) => r[0] }, { h: "Line", f: (r) => r[1] }, { h: "Order", k: true, f: (r) => r[2] }, { h: "Product", f: (r) => r[3] }, { h: "Changeover", n: true, f: (r) => r[4] }], [["07:00", "L1", "PO-28-0412", "Chiku stick 90 ml, 12 pallets", "26 min, recipe on the panel"], ["06:40", "L2", "CIP-2 then PO-28-0409", "Tender coconut bar, 2 pallets to finish", "CIP 54 min"], ["15 Mar", "L1", "PO-28-0414", "Guava stick 90 ml, 18 pallets", "34 min, new format"]]), { c: "c7" })}
+      ${card("What the panels report", `<p class="note">Counters, states, recipes and alarms come straight from the Siemens controllers over the read-only data interface written into the Teknoice order: production set and obtained, overrun, outlet temperature, tunnel air and chain speed, stops with the station at fault, piece counts and lane discards per wrapper lane, film speed from the reel encoders. Nothing is typed in and nothing is written back.</p>`, { c: "c5" })}
+    </div>`;
+  }
+
+  function pOEE() {
+    const sh = S.shift;
+    return `<div class="grid">
+      ${card("OEE waterfall, line 1", CH.waterfall(sh.L1.a, sh.L1.p, sh.L1.q), { c: "c6", sub: "night shift" })}
+      ${card("OEE waterfall, line 2", CH.waterfall(sh.L2.a, sh.L2.p, sh.L2.q), { c: "c6", sub: "night shift" })}
+      ${card("OEE by week", CH.line({ series: [{ data: S.oeeWeeks.L1, color: "var(--accent)" }, { data: S.oeeWeeks.L2, color: "var(--violet)" }], xLabels: S.oeeWeeks.labels, yMin: 60, yMax: 90, h: 160, limits: [{ y: 85, label: "target 85%", color: "var(--good)" }] }) + legend([["var(--accent)", "Line 1"], ["var(--violet)", "Line 2"]]), { c: "c6", sub: "six weeks since commissioning" })}
+      ${card("Losses this week, minutes", CH.hbars(S.losses.map((l) => ({ k: l.cause, s: l.kind, v: l.min, t: l.min + " min", c: l.kind === "Breakdown" ? "bad" : l.kind === "Changeover" ? "warn" : "" }))), { c: "c6", sub: "Pareto from the event log" })}
+      ${card("Stops by hour and day", CH.heat(S.stopsHeat, { rowLabels: ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"], label: "stops heatmap" }) + `<p class="note">Darker is more stops. The 02:00 to 04:00 band is the night reel-change cluster on the ML8.</p>`, { c: "c7", sub: "last 7 days, both lines" })}
+      ${card("Where the shift went, line 1", CH.hbars([{ k: "Running at speed", v: 372, t: "372 min", c: "good" }, { k: "Running slow", v: 54, t: "54 min", c: "warn" }, { k: "Stops", v: 27, t: "27 min", c: "bad" }, { k: "Changeover", v: 24, t: "24 min", c: "warn" }, { k: "Quality loss", v: 3, t: "3 min", c: "bad" }]), { c: "c5", sub: "480 minutes" })}
+    </div>`;
+  }
+
+  function pCrews() {
+    return `<div class="grid">
+      ${card("Crews this week", table([{ h: "Crew", k: true, f: (c) => `${esc(c.name)} <span class="s">lead ${esc(c.lead)}</span>` }, { h: "OEE", n: true, f: (c) => `<b>${c.oee}%</b>` }, { h: "Output vs plan", n: true, f: (c) => c.out + "%" }, { h: "Response to stops", n: true, f: (c) => c.resp.toFixed(1) + " min" }, { h: "Changeover", n: true, f: (c) => c.change + " min" }, { h: "First-pass quality", n: true, f: (c) => c.fpq + "%" }, { h: "Pallets in 20 min", n: true, f: (c) => c.p20 + "%" }], S.crews) + `<p class="note" style="margin-top:8px">Response time is the gap between a machine stop and the first operator action on the panel; changeover is panel recipe change to first good piece. Both come from the controllers, not from anyone watching people.</p>`, { c: "c8" })}
+      ${card("What separates the crews", `<div class="stack"><div class="insight warn"><b>Night reel changes take 14 min against 8 on days</b><p>Crew C changes reels lane by lane. Crew A pre-stages and splices on the fly. 186 minutes a week.</p></div><div class="insight"><b>Crew C responds to stops in 5.2 min</b><p>Push alerts now go to the wrapper operator as well as the lead; the gap should close this week.</p></div><div class="insight good"><b>Crew A: 99% of pallets inside 20 min</b><p>The forklift run is timed from the first case; A keeps a pallet queue of one.</p></div></div>`, { c: "c4" })}
+      ${card("Station board, night shift", table([{ h: "Station", k: true, f: (r) => r.st }, { h: "Who", f: (r) => r.who }, { h: "Measure", f: (r) => r.kpi }, { h: "Note", f: (r) => r.note }, { h: "", f: (r) => pill(r.state, r.state === "ok" ? "on track" : r.state === "warn" ? "watch" : "stopped") }], S.stations), { c: "c7" })}
+      ${card("Skills and coverage", `<div class="stack">${[["Freezer and extruder", 3, 4], ["ML8 wrapper", 2, 4], ["R2 wrapper", 3, 4], ["Enrober and chocolate", 2, 4], ["Case packing", 4, 4], ["CIP and sanitation", 2, 4], ["Forklift, freezer-rated", 3, 4]].map((r) => `<div class="bar"><span><span>${r[0]}</span></span><i class="${r[1] < 3 ? "warn" : "good"}" style="width:${r[1] / r[2] * 100}%"></i><b>${r[1]} of ${r[2]}</b></div>`).join("")}</div><p class="note" style="margin-top:8px">Trained operators per station across the three crews; phase 3 adds the skills map to the plan so every shift has cover.</p>`, { c: "c5" })}
+    </div>`;
+  }
+
+  function pProducts() {
+    return `<div class="grid">
+      ${card("OEE by product", table([{ h: "Product", k: true, f: (r) => r.sku }, { h: "Line", f: (r) => r.line }, { h: "OEE", n: true, f: (r) => `<b>${r.oee}%</b>` }, { h: "Best speed", n: true, f: (r) => f(r.speed) + " pcs/h" }, { h: "First-pass quality", n: true, f: (r) => r.fpq + "%" }, { h: "Changeover to", n: true, f: (r) => r.change + " min" }], S.byProduct) + `<p class="note" style="margin-top:8px">Guava sticks run 1,100 pcs/h slower than mango because the inclusion feeder dosing drifts; phase 3 ties the feeder speed to the recipe.</p>`, { c: "c7", sub: "six weeks" })}
+      ${card("Changeover matrix, line 1", `<div class="scroll"><table class="tbl"><thead><tr><th>From \\ to</th><th class="n">Mango</th><th class="n">Chiku</th><th class="n">Guava</th></tr></thead><tbody>${[["Mango", "—", "24", "34"], ["Chiku", "26", "—", "31"], ["Guava", "29", "28", "—"]].map((r) => `<tr><td class="k">${r[0]}</td>${r.slice(1).map((v) => `<td class="n">${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div><p class="note" style="margin-top:8px">Minutes from recipe change to first good piece, measured. Scheduling mango before chiku saves 10 minutes a change.</p>`, { c: "c5" })}
+      ${card("Yield and overrun, this shift", `<div class="tiles">${tile("Mix used", "3,120", "litres, from the batching scale", "", "L")}${tile("Pieces made", "118,400", "ML8 counter", "")}${tile("Yield", "97.2", "pieces against mix, recipe 90 ml", "ok", "%")}${tile("Overrun", "98", "set 100, freezer 2x2000", "warn", "%")}</div><p class="note" style="margin-top:8px">Overrun 2 points under set is about 1.3 percent more mix per piece; the freezer page flags it and the fill-weight tail on the quality page confirms it.</p>`, { c: "c12" })}
+    </div>`;
+  }
+
+  APP.views.production = (s) => {
+    const t = s.tab.production;
+    return `<div class="ph"><div><h1>Production and OEE</h1><p>Both lines live from the controllers; losses by cause; the crews measured by what the machines record.</p></div></div>
+      ${tabs("production", [["lines", "Lines live"], ["oee", "OEE and losses"], ["crews", "Crews and operators"], ["products", "Products and changeovers"]], t)}
+      ${t === "lines" ? pLines() : t === "oee" ? pOEE() : t === "crews" ? pCrews() : pProducts()}`;
+  };
+
+  // ---- Traceability and ERP ----
+  const palletRow = (p) => `data-drawer="pallet:${p.id}" class="click"`;
+  const stPill = (p) => p.status === "freezer" ? pill("ok", "in freezer") : p.status === "staged" ? pill("info", "staged") : p.status === "hold" ? pill("bad", "QA hold") : pill("mute", p.status);
+  function tPallets(s) {
+    const ps = S.pallets.slice().reverse();
+    const q = (s.search || "").toLowerCase();
+    const rows = q ? ps.filter((p) => (p.id + p.sscc + p.sku + p.lot + p.po).toLowerCase().includes(q)) : ps;
+    return `<div class="grid">
+      ${kpi("In the freezer", "318<small>of 552</small>", "rack positions, three high")}
+      ${kpi("Staged for the freezer", "2", "built in the last 10 minutes")}
+      ${kpi("On QA hold", "1", "P-0412, 23 min outside")}
+      ${kpi("Shipping today", "66", "3 trucks: 09:00, 11:30, 14:00", { unit: "pallets" })}
+      <div class="card c12"><div class="ch"><h3>Where pallets are, right now</h3><span class="sub">each step is a read, not a keystroke</span></div><div class="flow">${[["Built, first case", "46 tonight", "ok"], ["Labelled at G1", "46 · RFID SSCC", "ok"], ["Freezer door G2", "43 read in", "ok"], ["Staged", "2 waiting", "warn"], ["QA hold", "1", "bad"], ["Picked for ASN", "22 staged aisle A", "ok"], ["Dock G3", "0 shipped yet", ""]].map((x) => `<div class="st ${x[2]}"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div></div>
+      <div class="card c12"><div class="ch"><h3>Pallets built tonight</h3><span class="sub">click a pallet for its record</span><span class="r"><div class="search"><input id="psearch" type="search" placeholder="Find a pallet, SSCC, lot or order" value="${esc(s.search || "")}"></div></span></div>
+        ${table([{ h: "Pallet", k: true, f: (p) => `${p.id} <span class="s">${p.sscc}</span>` }, { h: "Line", f: (p) => p.line }, { h: "Product", f: (p) => `${esc(p.sku)} <span class="s">${p.lot} · ${p.cases} cases · ${p.po}</span>` }, { h: "First case", n: true, f: (p) => p.built }, { h: "G1 label", n: true, f: (p) => p.g1 }, { h: "G2 freezer", n: true, f: (p) => p.g2 || "—" }, { h: "Outside", n: true, f: (p) => `<b style="color:${p.outside > 20 ? "var(--bad)" : p.outside > 16 ? "var(--warn)" : "var(--ink)"}">${p.outside} min</b>` }, { h: "Location", f: (p) => p.loc }, { h: "", f: stPill }], rows.slice(0, 18), { row: palletRow })}
+        ${rows.length > 18 ? `<p class="note" style="margin-top:6px">${rows.length - 18} more; use the search box.</p>` : ""}</div>
+    </div>`;
+  }
+
+  function tInventory() {
+    const tot = S.inventory.reduce((a, r) => a + r.pallets, 0);
+    return `<div class="grid">
+      ${kpi("Freezer occupancy", `${pct(318, 552)}%`, "318 of 552 positions; 168 + 384 in two racking blocks")}
+      ${kpi("Pallets by lot", String(tot), `${S.inventory.length} lots on hand`)}
+      ${kpi("Oldest lot", "12 d", "co-packer pints transfer CP-0302; ships 14:00 today")}
+      ${kpi("ERP sync", "06:10", "46 inventory moves posted tonight; next sync in 20 min")}
+      ${card("Freezer inventory by lot", table([{ h: "Product", k: true, f: (r) => r.sku }, { h: "Lot", f: (r) => r.lot }, { h: "Pallets", n: true, f: (r) => f(r.pallets) }, { h: "Cases", n: true, f: (r) => f(r.cases) }, { h: "Age", n: true, f: (r) => r.age }, { h: "Best before", n: true, f: (r) => r.fefo }, { h: "FEFO", f: (r) => r.age === "12 d" ? pill("warn", "ship first") : r.age === "6 d" ? pill("info", "next") : pill("mute", "hold order") }], S.inventory), { c: "c8", sub: "first expired, first out" })}
+      ${card("How the ERP and the floor agree", `<p class="note">The SSCC on the pallet label is the one key. Faclon prints it from the ERP production order, reads it at the freezer door and at the dock, and posts every move back: produced quantities by lot, pallets into the freezer, picks, and the advance ship notice. The ERP keeps the book stock; the floor keeps the physical truth; the two are compared every 20 minutes and any difference shows here before a cycle count finds it.</p><div class="tiles" style="margin-top:8px">${tile("Book vs floor", "0", "pallets different", "ok")}${tile("Moves posted", "46", "tonight", "")}${tile("Picks released", "22", "ASN-28-0614", "")}</div>`, { c: "c4" })}
+      ${card("Rack occupancy by aisle", CH.hbars([{ k: "Aisle A, block 1", v: 52, t: "52 of 56" }, { k: "Aisle B, block 1", v: 48, t: "48 of 56" }, { k: "Aisle C, block 1", v: 40, t: "40 of 56" }, { k: "Aisle D, block 2", v: 66, t: "66 of 128" }, { k: "Aisle E, block 2", v: 60, t: "60 of 128" }, { k: "Aisle F, block 2", v: 52, t: "52 of 128" }]), { c: "c6", sub: "from the G2 read and the forklift put-away scan" })}
+      ${card("Pints from the co-packer", `<p class="note">The co-packer's pints arrive on their own SSCC labels and go through the same dock read. The transfer lot CP-0302 is the oldest stock in the building and the ERP's pick list for the 14:00 truck already takes it first.</p>`, { c: "c6" })}
+    </div>`;
+  }
+
+  function tOrders() {
+    return `<div class="grid">
+      ${card("Production orders from the ERP", table([{ h: "Order", k: true, f: (o) => o.po }, { h: "Product", f: (o) => `${esc(o.sku)} <span class="s">${o.line} · ${esc(o.customer)}</span>` }, { h: "Progress", f: (o) => `${progress(pct(o.built, o.planned))}<span class="s">${o.built} of ${o.planned} pallets · ${f(o.cases)} cases</span>` }, { h: "Due", n: true, f: (o) => o.due }, { h: "", f: (o) => o.status === "Ready to ship" ? pill("ok", o.status) : o.status.startsWith("Sched") ? pill("mute", o.status) : pill("info", o.status) }], S.orders), { c: "c7", sub: "live against the pallets built" })}
+      ${card("Shipments today", `<ul class="list">${S.shipments.map((sh) => `<li><span class="t">${sh.t}</span><span class="m"><b>${sh.id} · ${esc(sh.to)}</b><span>${sh.pallets} pallets · ${esc(sh.status)}${sh.temp ? " · " + esc(sh.temp) : ""}</span></span></li>`).join("")}</ul><p class="note" style="margin-top:8px">A pallet scanned at the dock without a freezer entry, or a reefer warmer than −10 °F at the door, stops the load before it leaves.</p>`, { c: "c5" })}
+      ${card("What flows between the ERP and the plant", `<div class="scroll"><table class="tbl"><thead><tr><th>From the ERP</th><th>From the plant</th></tr></thead><tbody><tr><td>Production orders: product, quantity, due date, customer</td><td>Pieces and cases produced per order, by the hour</td></tr><tr><td>Bill of materials and the recipe set for the panel</td><td>Mix used per batch, yield, overrun; rejects by class</td></tr><tr><td>Pallet label format and SSCC range</td><td>Every pallet: SSCC, lot, cases, built time, freezer in, location</td></tr><tr><td>Pick lists and the advance ship notice</td><td>Picks confirmed, dock reads, truck temperature at loading</td></tr><tr><td>Maintenance parts and purchase requests</td><td>Work orders closed, hours, parts used</td></tr></tbody></table></div><p class="note" style="margin-top:8px">Standard connectors for the common ERPs; the SSCC and the production order number are the only two keys needed.</p>`, { c: "c12" })}
+    </div>`;
+  }
+
+  function tLots(s) {
+    const g = S.genealogy;
+    return `<div class="grid">
+      <div class="card c12"><div class="ch"><h3>Lot genealogy</h3><span class="sub">from mix batch to truck, in one search</span></div><div class="search"><input id="lotsearch" type="search" placeholder="Lot, pallet, SSCC or order, e.g. L28-0314-A" value="L28-0314-A"><button class="btn pri" data-act="lotgo">Trace</button></div></div>
+      <div class="card c12"><div class="flow">${[["Mix batch " + g.batch, g.gallons + " gal · " + g.pasteurised, "ok"], ["Freezer", g.freezer, "ok"], ["Line run", g.run, "ok"], ["Pieces", f(g.pieces) + " counted · " + f(g.cases) + " cases", "ok"], ["Pallets", g.pallets.length + " pallets, " + g.pallets[0] + " to " + g.pallets[g.pallets.length - 1], "warn"], ["Order", g.po, "ok"], ["Shipment", g.shipment, ""]].map((x) => `<div class="st ${x[2]}"><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>
+      ${card("Pallets in this lot", table([{ h: "Pallet", k: true, f: (p) => p.id }, { h: "SSCC", f: (p) => p.sscc }, { h: "Built", n: true, f: (p) => p.built }, { h: "Outside", n: true, f: (p) => p.outside + " min" }, { h: "Location", f: (p) => p.loc }, { h: "", f: stPill }], S.pallets.filter((p) => g.pallets.includes(p.id)), { row: palletRow }), { c: "c7" })}
+      ${card("What a recall question gets", `<p class="note"><b>Which pallets hold mix batch MB-0314-03?</b> Six, listed left, one on hold. <b>Where are they?</b> Five in the freezer at the positions shown, one on the QA rack. <b>Were they ever warm?</b> No; the longest time outside the freezer was 23 minutes on P-0412, with the clip. <b>Was the mix pasteurised?</b> 176 °F for 25 seconds at 03:10, chart attached. <b>Which customer?</b> Retail DC 1 on ASN-28-0614, not yet shipped. Answered in seconds from the same records the retailer can audit.</p>`, { c: "c5" })}
+    </div>`;
+  }
+
+  function tWhy() {
+    const rows = [["Cost per pallet", "About $0.15 to 0.30, printed on the SSCC label the retailer needs anyway", "$3 to 25 per tag; reusable tags need a return loop at the dock", "Label only, no extra cost"], ["Battery", "None", "Coin cell, 1 to 3 years; capacity drops in the cold", "None"], ["−20 °F freezer", "Rated labels and adhesive; reads through frost", "Many tags rated to −4 °F only; industrial tags to −22 °F", "Scanner must see the label"], ["How it is read", "Portal at the freezer door and the dock; handheld or forklift reader as backup; no line of sight", "Beacons heard by fixed gateways; zone-level position", "A person points a scanner"], ["Continuous location", "At each gate; rack position from the put-away scan", "Yes, zone by zone, while the battery lasts", "No"], ["Temperature on the pallet", "No", "Yes, some tags log temperature", "No"], ["Retailer and ERP fit", "GS1 SSCC is the standard key; many retailers already mandate RFID", "Proprietary IDs; needs mapping to the SSCC", "SSCC barcode, standard"], ["Frozen product and water", "UHF is attenuated by water; mitigated with corner placement and two antennas per portal", "Not affected", "Not affected"], ["Verdict", "Recommended: the base for every pallet", "Option for staging and reefer trucks, where per-pallet temperature matters", "Fallback only"]];
+    return `<div class="grid">
+      <div class="card c12"><div class="ch"><h3>How to trace pallets: passive RFID on the SSCC label, with a BLE option</h3><span class="sub">the choice behind the pallet rule and the ERP link</span></div>
+        <div class="scroll"><table class="cmp"><thead><tr><th></th><th>Passive UHF RFID on the SSCC label</th><th>BLE sticker or tag</th><th>Barcode scan only</th></tr></thead><tbody>${rows.map((r) => `<tr><td class="k">${r[0]}</td><td class="${r[0] === "Verdict" ? "rec" : ""}">${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join("")}</tbody></table></div></div>
+      ${card("Why RFID wins for Frutero", `<p class="note">Every pallet that leaves Pottsville needs a GS1 SSCC logistics label for the retailer. Printing that label on an RFID inlay costs cents, needs no battery, works at −20 °F and reads through frost and fog without anyone pointing anything. One portal at the freezer door closes the 20-minute clock; readers on the dock doors confirm the load; the forklift reader records the rack position. The same number lives in the ERP, on the advance ship notice and in the retailer's receiving system, so there is one key end to end.</p>`, { c: "c6" })}
+      ${card("Where BLE still earns a place", `<p class="note">A battery tag that logs temperature is useful on the few pallets that stage outside the freezer for a reefer truck, and on the trucks themselves: it gives a temperature trace per pallet, not per room. Frutero can add a dozen reusable tags for that without changing the base system. Wiliot-style battery-free BLE labels are worth a trial later; today the cold rating and the reader density make them a second step, not the first.</p>`, { c: "c6" })}
+      ${card("What it takes", `<div class="tiles">${tile("Printer", "1", "RFID label printer at palletizing, ERP-fed", "")}${tile("Portal", "1", "freezer door G2, two antennas", "")}${tile("Dock readers", "2", "doors 1 and 2; handheld for 3 and 4", "")}${tile("Forklift reader", "1", "optional, for rack position", "")}${tile("Labels", "~900", "a week, freezer-rated adhesive", "")}</div>`, { c: "c12" })}
+    </div>`;
+  }
+
+  APP.views.trace = (s) => {
+    const t = s.tab.trace;
+    return `<div class="ph"><div><h1>Traceability and ERP</h1><p>Every pallet is a record: built, labelled, into the freezer, picked, loaded. The ERP holds the orders; the floor holds the truth; the SSCC joins the two.</p></div></div>
+      ${tabs("trace", [["pallets", "Pallets live"], ["inventory", "Freezer inventory"], ["orders", "Orders and shipments"], ["lots", "Lot genealogy"], ["why", "Why RFID"]], t)}
+      ${t === "pallets" ? tPallets(s) : t === "inventory" ? tInventory() : t === "orders" ? tOrders() : t === "lots" ? tLots(s) : tWhy()}`;
+  };
+
+  // drawer content for a pallet
+  APP.palletDrawer = (id) => {
+    const p = S.pallets.find((x) => x.id === id); if (!p) return "";
+    return `<div class="kv"><span>SSCC</span><b>${p.sscc}</b><span>Product</span><b>${esc(p.sku)}</b><span>Lot</span><b>${p.lot}</b><span>Cases</span><b>${p.cases}</b><span>Order</span><b>${p.po}</b><span>Line</span><b>${p.line}</b><span>First case</span><b>${p.built}</b><span>Labelled, G1</span><b>${p.g1}</b><span>Freezer in, G2</span><b>${p.g2 || "not yet"}</b><span>Outside</span><b style="color:${p.outside > 20 ? "var(--bad)" : "inherit"}">${p.outside} min</b><span>Location</span><b>${p.loc}</b><span>Status</span><b>${stPill(p)}</b></div>
+      ${p.outside > 20 ? `<div class="insight bad"><b>Over the 20-minute rule</b><p>Waited at end packaging from ${p.built}; alert sent at the 20-minute mark to the shift lead; acknowledged in 2 min. Clip from C8 attached. Release needs a QA check of the core temperature on two cases.</p><div class="acts"><button class="btn sm" data-act="release:${p.id}">Release after check</button><button class="btn sm ghost">Open clip</button></div></div>` : `<div class="insight good"><b>Inside the rule</b><p>From the first case to the freezer door in ${p.outside} minutes.</p></div>`}
+      <div><div class="ch"><h3>Timeline</h3></div><ul class="list"><li><span class="t">${p.built}</span><span class="m"><b>First case counted, C${p.line === "L1" ? 7 : 8}</b><span>clock starts</span></span></li><li><span class="t">${p.g1}</span><span class="m"><b>SSCC label printed and applied, G1</b><span>from ${p.po}</span></span></li>${p.g2 ? `<li><span class="t">${p.g2}</span><span class="m"><b>Read at the freezer door, G2</b><span>clock stops at ${p.outside} min</span></span></li><li><span class="t">${p.g2}</span><span class="m"><b>Put away ${p.loc}</b><span>forklift reader</span></span></li>` : `<li><span class="t">now</span><span class="m"><b>Staged at packaging exit</b><span>waiting for the forklift</span></span></li>`}</ul></div>`;
+  };
+})();
+
+
+// ===== views3.js =====
+// ---------- Views: Downtime and Maintenance, CIP, Bruce, boot ----------
+(() => {
+  const { esc, f, pill, dot, kpi, card, tile, table, tabs, legend, pct, progress, toast, drawer } = UI;
+  const S = SIM;
+
+  // ---- Maintenance ----
+  function mEvents() {
+    const sh = S.shift;
+    return `<div class="grid">
+      ${kpi("Downtime this shift", `${sh.L1.stopMin + sh.L2.stopMin}<small>min</small>`, `line 1 <b>${sh.L1.stopMin}</b> · line 2 <b>${sh.L2.stopMin}</b> · 5 stops`)}
+      ${kpi("Mean time to repair", "7.6<small>min</small>", "breakdowns this week, both lines")}
+      ${kpi("Response to a stop", "3.4<small>min</small>", "stop to first action on the panel")}
+      ${kpi("Open events", "1", "line 2, R2 film splice since 06:08", { cls: "alert" })}
+      ${card("Event log", table([{ h: "Time", n: true, f: (e) => e.t }, { h: "Line", f: (e) => e.line }, { h: "Machine", k: true, f: (e) => e.machine }, { h: "Cause", f: (e) => `${esc(e.cause)} <span class="s">${e.kind} · from the panel's station-at-fault code</span>` }, { h: "Duration", n: true, f: (e) => e.min + " min" }, { h: "Response", n: true, f: (e) => e.resp ? e.resp.toFixed(1) + " min" : "—" }, { h: "Who", f: (e) => e.who }, { h: "", f: (e) => e.status === "open" ? pill("bad", "open") : pill("mute", "closed") }], S.events, { row: (e) => `data-drawer="event:${e.t}" class="click"` }), { c: "c8", sub: "night shift; click an event" })}
+      ${card("By kind, this week", CH.hbars([{ k: "Breakdowns", v: 333, t: "333 min", c: "bad" }, { k: "Planned stops", v: 244, t: "244 min" }, { k: "Changeovers", v: 118, t: "118 min", c: "warn" }]) + `<div class="ch" style="margin-top:12px"><h3>Top causes</h3></div>` + CH.hbars(S.losses.slice(0, 5).map((l) => ({ k: l.cause, v: l.min, t: l.min + " min", c: l.kind === "Breakdown" ? "bad" : "" }))), { c: "c4" })}
+      ${card("MTBF and MTTR by machine", table([{ h: "Machine", k: true, f: (a) => a.name }, { h: "Hours run", n: true, f: (a) => f(a.hours) }, { h: "MTBF", n: true, f: (a) => a.mtbf + " h" }, { h: "MTTR", n: true, f: (a) => a.mttr + " min" }, { h: "Health", f: (a) => `${progress(a.health)}<span class="s">${a.health}</span>` }, { h: "Next", f: (a) => `${esc(a.next)} <span class="s">${esc(a.due)}</span>` }, { h: "", f: (a) => pill(a.state, a.state === "ok" ? "ok" : "watch") }], S.assets, { row: (a) => `data-drawer="asset:${a.id}" class="click"` }), { c: "c12", sub: "from the panel alarms, stop codes and hour counters" })}
+    </div>`;
+  }
+
+  function mInsights(s) {
+    return `<div class="grid">
+      <div class="card c7"><div class="ch"><h3>What Bruce sees coming</h3><span class="sub">patterns in the stops, counters and sensors, with the evidence</span><span class="r"><span class="pill vio">Bruce</span></span></div>
+        <div class="stack">${S.insights.map((i, k) => `<div class="insight ${i.sev}"><b>${esc(i.title)}</b><p>${esc(i.body)}</p><div class="acts">${i.act.startsWith("See") ? `<button class="btn sm" data-go="cip">Open CIP</button>` : i.act.startsWith("Suggest") ? `<button class="btn sm" data-act="note:${k}">Add to the shift handover</button>` : `<button class="btn sm pri" data-act="wo:${k}">${esc(i.act)}</button>`}<span class="ev">Evidence: ${esc(i.ev)}</span></div></div>`).join("")}</div></div>
+      <div class="card c5"><div class="ch"><h3>Condition signals</h3><span class="sub">read from the panels and the refrigeration controller</span></div>
+        ${card("Tunnel 18/800 overload stops per week", CH.bars({ cats: ["W6", "W7", "W8", "W9", "W10", "W11"], series: [{ data: [0, 1, 0, 1, 0, 2], color: "var(--bad)" }], h: 110, yMax: 3 }), { c: "c12", cls: "flat" })}
+        <div style="height:10px"></div>
+        ${card("CO2 compressor 2, capacity steps at the same load", CH.line({ series: [{ data: S.series(28, (i) => 5.1 + (i > 18 ? (i - 18) * 0.12 : 0) + S.nz(0.25)), color: "var(--warn)", area: true }], h: 110, yMin: 4, yMax: 7.5, limits: [{ y: 6.2, label: "norm + 18%", color: "var(--warn)" }] }), { c: "c12", cls: "flat", sub: "28 days" })}
+        <div style="height:10px"></div>
+        ${card("Dasher hours, Teknofreeze 2x2000", `<div class="bar"><span><span>1,980 of 2,000 h to service</span></span><i class="warn" style="width:99%"></i><b>99%</b></div>`, { c: "c12", cls: "flat" })}
+      </div>
+      ${card("Stops by hour and day", CH.heat(S.stopsHeat, { rowLabels: ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon", "Tue"], label: "stops heatmap" }), { c: "c12", sub: "last 7 days; the night reel-change cluster shows at 02:00 to 04:00" })}
+    </div>`;
+  }
+
+  function mPlan() {
+    const days = ["Mon 13", "Tue 14", "Wed 15", "Thu 16", "Fri 17", "Sat 18", "Sun 19"];
+    const idx = (d) => (d === 0 ? 1 : d === 1 ? 2 : d === 2 ? 3 : d === 3 ? 4 : d === 4 ? 5 : d === 5 ? 6 : 0);
+    const techLoad = [{ k: "Marco", v: 7.5 }, { k: "Jen", v: 5.2 }, { k: "Omar", v: 6.1 }, { k: "Contractor", v: 2 }];
+    return `<div class="grid">
+      <div class="card c12"><div class="ch"><h3>Preventive plan, this week</h3><span class="sub">intervals from the Teknoice manuals and the hour counters; items due move to the front</span><span class="r"><button class="btn sm" data-act="autoplan">Let Bruce fill next week</button></span></div>
+        <div class="cal">${days.map((d, i) => `<div class="day ${i === 1 ? "today" : ""}"><h5>${d}${i === 1 ? "<span>today</span>" : ""}</h5>${S.pmPlan.filter((p) => idx(p.day) === i).map((p) => `<div class="pm ${p.due ? "due" : ""}">${esc(p.what)}<br><span style="color:var(--muted)">${p.min} min · ${p.who}</span></div>`).join("")}</div>`).join("")}</div></div>
+      ${card("Hours this week, by machine", CH.hbars(S.woHours.map((w) => ({ k: w.m, v: w.h, t: w.h.toFixed(1) + " h", c: w.m.startsWith("Prev") ? "good" : "" }))) + `<p class="note" style="margin-top:8px">Hours counted from work orders opened and closed in the app; no one is tracked.</p>`, { c: "c6" })}
+      ${card("Technician load, this week", CH.hbars(techLoad.map((t) => ({ k: t.k, v: t.v, t: t.v + " h", c: t.v > 7 ? "warn" : "" }))) + `<p class="note" style="margin-top:8px">Assignments balance against the production plan: nothing on a line during its run, everything in CIP and changeover windows.</p>`, { c: "c6" })}
+      ${card("Parts on hand for the plan", table([{ h: "Part", k: true, f: (r) => r[0] }, { h: "For", f: (r) => r[1] }, { h: "On hand", n: true, f: (r) => r[2] }, { h: "", f: (r) => r[3] }], [["Dasher scraper blade set, 2x2000", "Dasher service tonight", "2", pill("ok", "in stock")], ["Tray chain link kit, 18/800", "Chain inspection Wed", "1", pill("ok", "in stock")], ["Splice unit sensor, ML8", "WO-0338", "0", pill("warn", "ordered, ETA Thu")], ["Pump seal, enrober tank 1", "Thu", "3", pill("ok", "in stock")]]), { c: "c12", sub: "parts mezzanine; reorder requests go to the ERP" })}
+    </div>`;
+  }
+
+  function mWork(s) {
+    const cols = [["open", "Open"], ["assigned", "Assigned"], ["progress", "In progress"], ["done", "Done this week"]];
+    const wo = (w) => `<div class="wo"><b>${esc(w.title)}</b><div class="meta"><span>${w.id}</span><span>${w.machine}</span><span>${w.est} min</span><span>${w.pri}</span>${w.hours ? `<span>${w.hours} h logged</span>` : ""}</div><div class="meta"><span>from ${esc(w.src)}</span>${w.tech ? `<span><b>${w.tech}</b></span>` : ""}</div>
+      ${w.col === "open" ? `<select data-assign="${w.id}"><option value="">Assign to…</option><option>Marco</option><option>Jen</option><option>Omar</option><option>Contractor</option></select>` : ""}
+      <div class="acts">${w.col === "assigned" ? `<button class="btn sm" data-act="start:${w.id}">Start</button>` : w.col === "progress" ? `<button class="btn sm" data-act="done:${w.id}">Close</button>` : ""}</div></div>`;
+    return `<div class="grid">
+      ${kpi("Open", String(S.workOrders.filter((w) => w.col === "open").length), "waiting for a technician")}
+      ${kpi("In progress", String(S.workOrders.filter((w) => w.col === "progress").length), "2.3 h logged today")}
+      ${kpi("Closed this week", "14", "28.5 h; preventive 7.2 h of it")}
+      ${kpi("Suggested by Bruce", String(S.workOrders.filter((w) => w.src.startsWith("Bruce")).length), "each one approved by a person")}
+      <div class="card c12"><div class="ch"><h3>Work orders</h3><span class="sub">assign, start and close here; hours are counted from these</span></div><div class="kanban">${cols.map((c) => `<div class="col"><h4>${c[1]}<span>${S.workOrders.filter((w) => w.col === c[0]).length}</span></h4>${S.workOrders.filter((w) => w.col === c[0]).map(wo).join("")}</div>`).join("")}</div></div>
+    </div>`;
+  }
+
+  APP.views.maint = (s) => {
+    const t = s.tab.maint;
+    return `<div class="ph"><div><h1>Downtime and maintenance</h1><p>Every stop with its cause from the panel; the patterns that predict the next one; the plan and the work orders that prevent it.</p></div></div>
+      ${tabs("maint", [["events", "Events"], ["insights", "Insights and prevention"], ["plan", "Maintenance plan"], ["work", "Work orders"]], t)}
+      ${t === "events" ? mEvents() : t === "insights" ? mInsights(s) : t === "plan" ? mPlan() : mWork(s)}`;
+  };
+
+  APP.eventDrawer = (t) => { const e = S.events.find((x) => x.t === t); if (!e) return ""; return `<div class="kv"><span>Time</span><b>${e.t}</b><span>Line</span><b>${e.line}</b><span>Machine</span><b>${e.machine}</b><span>Cause</span><b>${esc(e.cause)}</b><span>Kind</span><b>${e.kind}</b><span>Duration</span><b>${e.min} min</b><span>Response</span><b>${e.resp ? e.resp + " min" : "—"}</b><span>By</span><b>${e.who}</b></div><div class="insight"><b>From the controller</b><p>Station-at-fault code and alarm text from the panel, the counter values before and after, and the camera clip from the nearest position are attached to the event. The operator's note is the only typed field.</p></div><div class="acts" style="display:flex;gap:6px"><button class="btn sm pri" data-act="wofrom:${e.t}">Create work order</button><button class="btn sm">Open clip</button></div>`; };
+  APP.assetDrawer = (id) => { const a = S.assets.find((x) => x.id === id); if (!a) return ""; return `<div class="kv"><span>Hours run</span><b>${f(a.hours)}</b><span>MTBF</span><b>${a.mtbf} h</b><span>MTTR</span><b>${a.mttr} min</b><span>Health</span><b>${a.health}</b><span>Next</span><b>${esc(a.next)}</b><span>Due</span><b>${esc(a.due)}</b></div>${card("Stops, 6 weeks", CH.bars({ cats: ["W6", "W7", "W8", "W9", "W10", "W11"], series: [{ data: S.series(6, () => Math.round(1 + S.rnd() * 4)), color: "var(--accent)" }], h: 110 }), { c: "c12", cls: "flat" })}<div class="insight"><b>Manual and parts</b><p>Teknoice service intervals, the parts list and the last three work orders are one tap away; Bruce drafts the next work order from them.</p></div>`; };
+
+  // ---- CIP ----
+  function cipLive(s) {
+    const c = S.circuits[0], ph = S.phases;
+    const sensorTiles = (list, pre) => `<div class="tiles">${list.map((x, i) => { const st = x.lo != null ? UI.stateOf(x.v, x.lo, x.hi) : ""; const live = pre === "in" && i === 0 ? "cipTin" : pre === "out" && i === 0 ? "cipTout" : pre === "out" && i === 4 ? "cipTurb" : pre === "out" && i === 5 ? "cipRes" : null; return tile(x.k, live ? `<span data-live="${live}">${x.v}</span>` : String(x.v), x.lo != null ? `${x.lo} to ${x.hi}${x.u ? " " + x.u : ""}` : "", st, x.u); }).join("")}</div>`;
+    return `<div class="grid">
+      <div class="card c12"><div class="ch"><h3>Circuits</h3><span class="sub">each with its own supply and return sensors</span></div><div class="flow">${S.circuits.map((x) => `<div class="st ${x.state === "running" ? "ok" : x.state.startsWith("done") ? "" : "warn"}"><b>${x.id} · ${esc(x.name)}</b><span>${x.state === "running" ? `running: ${ph[Math.max(0, x.phase)].k}, <span data-live="cipT">${x.t}</span> min in` : esc(x.state)}</span></div>`).join("")}</div></div>
+      ${card("CIP-1 cycle " + c.cycleId + ", fixed recipe against measured endpoints", CH.phaseBars(ph.map((p, i) => ({ ...p, actual: i < c.phase ? p.actual : i === c.phase ? Math.max(1, Math.round(c.t)) : p.actual })), 75) + legend([["var(--grid)", "fixed recipe step"], ["var(--accent)", "sensor-verified, rinses and caustic"], ["var(--violet)", "acid"], ["var(--good)", "sanitise"]]) + `<p class="note">Each phase ends when the return-line sensors say the job is done, not when a timer runs out: <b>${esc(ph[Math.max(0, c.phase)].end)}</b>. Expected this cycle: ${S.actualTotal} min against ${S.fixedTotal}, <b>${S.fixedTotal - S.actualTotal} minutes back on the line</b>.</p>`, { c: "c8", sub: "minutes" })}
+      ${card("Residue index, caustic wash", CH.line({ series: [{ data: S.residue, color: "var(--accent)", area: true }], h: 150, yMin: 0, yMax: 1.05, limits: [{ y: 0.15, label: "endpoint 0.15", color: "var(--good)" }], marks: [{ i: 19, label: "endpoint met, 19 min" }], xLabels: S.series(26, (i) => i + " min"), xEvery: 5 }) + `<p class="note">Integrated UV-Vis absorbance of the return line against the clean baseline: fat and chocolate at 400 to 480 nm, protein at 280 nm, fruit colour at 520 nm.</p>`, { c: "c4" })}
+      <div class="card c6"><div class="ch"><h3>Supply, inlet pipe</h3><span class="r">live</span></div>${sensorTiles(S.cipSensors.inlet, "in")}</div>
+      <div class="card c6"><div class="ch"><h3>Return, outlet pipe</h3><span class="r">live</span></div>${sensorTiles(S.cipSensors.outlet, "out")}</div>
+      ${card("Spectral fingerprint of the return line", CH.line({ series: [{ data: S.spectrum.start, color: "var(--bad)", end: false, dash: "4 3" }, { data: S.spectrum.now, color: "var(--accent)", end: false }, { data: S.spectrum.clean, color: "var(--good)", end: false }], xLabels: S.wl.map((w) => w + " nm"), xEvery: 6, h: 170, yMin: 0, yMax: 1.1, fmt: (v) => v.toFixed(1), marks: [{ i: 3, label: "protein 280", color: "var(--muted)" }, { i: 19, label: "fat, chocolate 440", color: "var(--muted)" }, { i: 27, label: "fruit 520", color: "var(--muted)" }] }) + legend([["var(--bad)", "start of wash"], ["var(--accent)", "now, 12 min into caustic"], ["var(--good)", "clean baseline"]]), { c: "c8", sub: "absorbance, 250 to 750 nm" })}
+      <div class="card c4"><div class="ch"><h3>Tanks and dosing</h3></div>${S.cipSensors.tanks.map((t) => `<div class="bar"><span><span>${t.k}</span></span><i class="${t.v < 50 ? "warn" : ""}" style="width:${t.v}%"></i><b>${t.v}%</b></div>`).join("")}<p class="note" style="margin-top:8px">Caustic is dosed to 1.5 percent by conductivity, not by volume, so a weak batch is caught before the wash starts. Recovered final-rinse water feeds the next pre-rinse.</p></div>
+    </div>`;
+  }
+
+  function cipHistory() {
+    return `<div class="grid">
+      ${kpi("Cycles, 14 days", String(S.cycles.length), "all verified on endpoints; 0 repeats")}
+      ${kpi("Minutes saved per cycle", "19.1", "average; fixed recipe 73 min", { unit: "min" })}
+      ${kpi("Final rinse, conductivity", "+14<small>µS/cm</small>", "average above supply; limit 20")}
+      ${kpi("Repeat washes", "0", "a failed endpoint would repeat the phase, not the cycle")}
+      ${card("Minutes saved per cycle", CH.bars({ cats: S.cycles.map((c) => c.date), series: [{ data: S.cycles.map((c) => c.saved), color: "var(--good)" }], h: 150, xEvery: 7, yMax: 25 }), { c: "c12", sub: "against the fixed recipe" })}
+      ${card("Cycle record", table([{ h: "Cycle", k: true, f: (c) => c.id }, { h: "Date", f: (c) => c.date }, { h: "Circuit", f: (c) => c.circuit }, { h: "Fixed", n: true, f: (c) => c.fixed + " min" }, { h: "Actual", n: true, f: (c) => c.actual + " min" }, { h: "Saved", n: true, f: (c) => `<b style="color:var(--good)">${c.saved} min</b>` }, { h: "Water", n: true, f: (c) => f(c.water) + " gal" }, { h: "Caustic", n: true, f: (c) => c.caustic + " L" }, { h: "Acid", n: true, f: (c) => c.acid + " L" }, { h: "Energy", n: true, f: (c) => c.kwh + " kWh" }, { h: "Final rinse", n: true, f: (c) => "+" + c.rinse + " µS" }, { h: "", f: (c) => pill("ok", "verified") }], S.cycles.slice().reverse()), { c: "c12", sub: "every cycle keeps its sensor traces as the sanitation record" })}
+    </div>`;
+  }
+
+  function cipSavings(s) {
+    const d = { ...S.cipDefaults, ...(s.cipIn || {}) };
+    const minDay = (S.fixedTotal - S.actualTotal) * d.cyclesPerDay, hrsDay = minDay / 60;
+    const upDay = hrsDay * d.lineHourValue, waterDay = d.waterSaved * d.cyclesPerDay * d.waterCost, chemDay = (d.causticSaved * d.causticCost + d.acidSaved * d.acidCost) * d.cyclesPerDay, enDay = d.kwhSaved * d.cyclesPerDay * d.energyCost;
+    const tot = upDay + waterDay + chemDay + enDay;
+    const inp = (k, l, step = 1) => `<label class="kv" style="grid-template-columns:1fr 110px;align-items:center"><span>${l}</span><input data-cip="${k}" type="number" step="${step}" value="${d[k]}" style="border:1px solid var(--line);border-radius:6px;padding:4px 8px;background:var(--panel);width:110px"></label>`;
+    return `<div class="grid">
+      ${kpi("Line time back, per day", f(Math.round(minDay)), `${d.cyclesPerDay} cycles × ${S.fixedTotal - S.actualTotal} min`, { unit: "min" })}
+      ${kpi("Value per day", "$" + f(Math.round(tot)), `uptime $${f(Math.round(upDay))} · water, chemicals, energy $${f(Math.round(waterDay + chemDay + enDay))}`)}
+      ${kpi("Per month", "$" + f(Math.round(tot * 30)), `${f(Math.round(minDay * 30 / 60))} line-hours`)}
+      ${kpi("Per year", "$" + f(Math.round(tot * 350)), `${f(Math.round(d.waterSaved * d.cyclesPerDay * 350 / 1000))}k gallons of water`)}
+      <div class="card c5"><div class="ch"><h3>Assumptions, Frutero's to set</h3><span class="sub">change a value and the figures update</span></div><div class="stack">${inp("cyclesPerDay", "CIP cycles per day", 0.5)}${inp("lineHourValue", "Value of one line-hour, $", 50)}${inp("waterCost", "Water and effluent, $ per gallon", 0.001)}${inp("causticCost", "Caustic, $ per litre", 0.1)}${inp("acidCost", "Acid, $ per litre", 0.1)}${inp("energyCost", "Energy, $ per kWh", 0.01)}</div><p class="note" style="margin-top:8px">Per cycle the sensors save about ${d.waterSaved} gallons, ${d.causticSaved} L caustic, ${d.acidSaved} L acid and ${d.kwhSaved} kWh of heating. Line-hour value is the contribution of an hour of production; a 90 ml stick line at 16,900 pieces an hour makes it the largest term by far.</p></div>
+      ${card("Where the minutes come from", table([{ h: "Phase", k: true, f: (p) => p.k }, { h: "Fixed", n: true, f: (p) => p.fixed + " min" }, { h: "Measured", n: true, f: (p) => p.actual + " min" }, { h: "Saved", n: true, f: (p) => `<b style="color:var(--good)">${p.fixed - p.actual} min</b>` }, { h: "Endpoint", f: (p) => esc(p.end) }], S.phases) + `<p class="note" style="margin-top:8px">A fixed recipe carries a safety margin on every step because nobody can see inside the pipe. The spectral sensor, conductivity, pH, turbidity and temperature on the return line show when each step has actually finished, and the record proves it.</p>`, { c: "c7" })}
+      ${card("Savings, 14 days", CH.bars({ cats: S.cycles.map((c) => c.date), series: [{ data: S.cycles.map((c) => Math.round(c.saved / 60 * d.lineHourValue)), color: "var(--accent)" }, { data: S.cycles.map((c) => Math.round((2600 - c.water) * d.waterCost + (12 - c.caustic) * d.causticCost + (6 - c.acid) * d.acidCost + (95 - c.kwh) * d.energyCost)), color: "var(--teal)" }], stacked: true, h: 150, xEvery: 7, fmt: (v) => "$" + f(Math.round(v)) }) + legend([["var(--accent)", "line time"], ["var(--teal)", "water, chemicals, energy"]]), { c: "c12", sub: "dollars per cycle at the assumptions above" })}
+    </div>`;
+  }
+
+  function cipSensorsTab() {
+    const rows = [["Supply line", "Temperature", "RTD", "32 to 212 °F", "Jun 2028", "ok"], ["Supply line", "Flow", "Electromagnetic", "0 to 200 gal/min", "Sep 2028", "ok"], ["Supply line", "Pressure", "Piezo", "0 to 100 psi", "Sep 2028", "ok"], ["Supply line", "Conductivity", "Inductive", "0 to 200 mS/cm", "Jun 2028", "ok"], ["Supply line", "pH", "Glass electrode", "0 to 14", "Apr 2028", "warn"], ["Supply line", "Turbidity", "Nephelometric", "0 to 100 NTU", "Jun 2028", "ok"], ["Return line", "Temperature", "RTD", "32 to 212 °F", "Jun 2028", "ok"], ["Return line", "Flow", "Electromagnetic", "0 to 200 gal/min", "Sep 2028", "ok"], ["Return line", "Conductivity", "Inductive", "0 to 200 mS/cm", "Jun 2028", "ok"], ["Return line", "pH", "Glass electrode", "0 to 14", "Apr 2028", "warn"], ["Return line", "Turbidity", "Nephelometric", "0 to 100 NTU", "Jun 2028", "ok"], ["Return line", "Spectral absorbance", "Inline UV-Vis, 200 to 800 nm", "0 to 2 AU", "Jun 2028", "ok"], ["Tanks", "Level, 4 tanks", "Hydrostatic", "0 to 100 %", "Sep 2028", "ok"], ["Dosing", "Caustic and acid dosing", "Pump stroke counter", "", "", "ok"]];
+    return `<div class="grid">
+      ${card("Sensors on the CIP skid", table([{ h: "Where", k: true, f: (r) => r[0] }, { h: "Parameter", f: (r) => r[1] }, { h: "Type", f: (r) => r[2] }, { h: "Range", f: (r) => r[3] }, { h: "Calibration due", n: true, f: (r) => r[4] }, { h: "", f: (r) => pill(r[5], r[5] === "ok" ? "ok" : "due soon") }], rows), { c: "c8", sub: "hygienic, 3-A fittings; readings every second during a cycle" })}
+      ${card("What each sensor settles", `<div class="stack"><div class="insight"><b>Conductivity</b><p>Caustic and acid strength on the supply; on the return, the moment a rinse has washed the chemical out.</p></div><div class="insight"><b>Spectral absorbance</b><p>Product residue by kind: protein, fat and chocolate, fruit colour. The endpoint of the pre-rinse and the caustic wash.</p></div><div class="insight"><b>Turbidity and contaminants</b><p>Suspended solids on the return; a contaminant index for anything that should not be there, such as detergent carry-over in the final rinse.</p></div><div class="insight"><b>Temperature, flow, pressure, level</b><p>Proof that the wash ran at the recipe's temperature and velocity, and that every tank had what the dosing needed.</p></div></div>`, { c: "c4" })}
+    </div>`;
+  }
+
+  APP.views.cip = (s) => {
+    const t = s.tab.cip;
+    return `<div class="ph"><div><h1>CIP monitoring</h1><p>Clean-in-place cycles end on measured endpoints, not timers: 15 to 20 minutes back on the line per cycle, with the sensor record as the sanitation proof.</p></div></div>
+      ${tabs("cip", [["live", "Live cycle"], ["history", "Cycle history"], ["savings", "Savings"], ["sensors", "Sensors"]], t)}
+      ${t === "live" ? cipLive(s) : t === "history" ? cipHistory() : t === "savings" ? cipSavings(s) : cipSensorsTab()}`;
+  };
+
+  // ---- Bruce (canned, data-backed answers) ----
+  const answers = [
+    [/overnight|happened|night/i, () => `<b>Overnight, 22:00 to 06:00.</b><ul><li>Line 1 made ${f(S.shift.L1.out)} Mango sticks, ${pct(S.shift.L1.out, S.shift.L1.plan)}% of plan; OEE ${S.shift.L1.oee}%; 3 stops, 27 min, the longest the 14-minute reel change at 04:52.</li><li>Line 2 made ${f(S.shift.L2.out)} Tender coconut bars, OEE ${S.shift.L2.oee}%, and stopped at 06:08 on an R2 film splice.</li><li>Quality 98.1% first pass; off-centre sticks on C1 lane 3 crossed the limit at 05:52.</li><li>Cold rooms in band all night; cooler door open 11 min at 02:14, acknowledged in 3.</li><li>46 pallets built, 45 inside 20 minutes; P-0412 waited 23 min and is on QA hold.</li></ul>`],
+    [/why.*(line 1|miss|plan)|lost|lose/i, () => `<b>Line 1 missed plan by 7,600 pieces.</b><ul><li>27 minutes of stops: reel changes 22 min (two), stick inserter jam 9 min, overload stop 4 min, less overlap.</li><li>Running speed averaged 16,900 against 17,500 best for this format: about 2,900 pieces.</li><li>2,480 rejects, mostly stick and coating.</li></ul>The reel changes are the lever: crew A does them in 8 minutes. Pre-staging reels at 01:30 recovers most of the gap.`],
+    [/pallet|hold|qa check/i, () => `<b>One pallet needs a QA check: P-0412.</b> Mango stick 90 ml, lot L28-0314-A, 64 cases, first case 03:40, 23 minutes before the freezer door. The alert went to Dana R. at the 20-minute mark and was acknowledged in 2 minutes. The clip from C8 is attached. Release needs a core-temperature check on two cases; the other 45 pallets were inside the limit.`],
+    [/dasher|service|maintenance|work order/i, () => `<b>The 2x2000 dasher is at 1,980 hours; Teknoice sets 2,000.</b> Tonight's CIP window at 06:30 has 40 minutes free, enough for the service. WO-0341 is assigned to Marco. The tray-chain inspection on the 18/800 is the other open item: two overload stops this week after warm restarts.`],
+    [/cip|clean|sav/i, () => `<b>CIP this week: 58 minutes of line time back yesterday, about ${f(Math.round((S.fixedTotal - S.actualTotal) * S.cipDefaults.cyclesPerDay))} a day.</b> Cycles end on the return-line sensors: residue index under 0.15 after the pre-rinse, flat for three minutes in the caustic, conductivity back to supply in the rinses. Every cycle in the last 14 days verified; no repeats. CIP-1 is in the caustic wash now, tracking 19 minutes early.`],
+    [/oee|crew|operator|shift/i, () => `<b>OEE this shift: line 1 at 78%, line 2 at 81%.</b> Crew C is 4 points behind crew A for the week, almost all of it reel changes (14 min against 8) and response to stops (5.2 min against 3.1). First-pass quality and pallet timing are within a point across crews.`],
+    [/temperature|freezer|cold|cooler|zone/i, () => `<b>Cold rooms now:</b> freezer ${S.zones[0].now.toFixed(1)} °F, cooler ${S.zones[1].now.toFixed(1)} °F, hot box ${S.zones[2].now.toFixed(1)} °F, tunnel 1 ${S.zones[3].now.toFixed(1)} °F, dock ${S.zones[5].now.toFixed(1)} °F. All in band for the last 24 hours except the 11-minute cooler door at 02:14. Three defrost cycles, all within the set duration.`],
+    [/ship|truck|order|erp|inventory/i, () => `<b>Shipping today: 66 pallets on three trucks.</b> 09:00 to Retail DC 1 (22 pallets, loading at door 2), 11:30 to Retail DC 2 (18, staged in aisle A), 14:00 to the club store DC (26, pick list released). Freezer at 318 of 552 positions. The oldest stock is the co-packer pints, 12 days, and the 14:00 pick takes it first.`],
+    [/rfid|ble|trace/i, () => `<b>Pallets are traced with passive RFID on the SSCC label</b>: no battery, cents per pallet, read at the freezer door and the dock without anyone pointing a scanner. A BLE temperature tag is the option for pallets staged for reefer trucks. The Why RFID tab has the comparison.`],
+  ];
+  const fallback = () => `I can answer from the plant's own data: what happened overnight, why a line missed plan, which pallets need a QA check, what maintenance is due, what CIP saved, how the crews compare, the cold rooms, today's shipments. Try one of the questions below.`;
+  const suggestions = ["What happened overnight?", "Why did line 1 miss plan?", "Which pallets need a QA check?", "What maintenance is due?", "How much did CIP save?", "How do the crews compare?"];
+  function ask(q) {
+    const box = document.querySelector("#bruce .msgs");
+    box.insertAdjacentHTML("beforeend", `<div class="msg me">${esc(q)}</div>`);
+    const a = (answers.find((x) => x[0].test(q)) || [null, fallback])[1]();
+    setTimeout(() => { box.insertAdjacentHTML("beforeend", `<div class="msg ai">${a}</div>`); box.scrollTop = box.scrollHeight; }, 350);
+    box.scrollTop = box.scrollHeight;
+  }
+  function openBruce(q) { document.getElementById("bruce").classList.add("open"); document.getElementById("fab").classList.add("hidden"); if (q) ask(q); }
+  function closeBruce() { document.getElementById("bruce").classList.remove("open"); document.getElementById("fab").classList.remove("hidden"); }
+
+  // ---- boot and delegation ----
+  function boot() {
+    document.querySelector("#bruce .sug").innerHTML = suggestions.map((q) => `<button data-bruce="${esc(q)}">${esc(q)}</button>`).join("");
+    document.querySelector("#bruce .msgs").innerHTML = `<div class="msg ai"><b>Good morning.</b> I read the plant's data: the controllers, the cameras, the cold rooms, the pallets, the CIP skid. Ask me anything about the night, or pick a question.</div>`;
+    try { const v = localStorage.getItem("frutero-view"); if (v && APP.views[v]) APP.state.view = v; } catch (e) {}
+    const h = (location.hash || "").slice(1); if (h && APP.views[h]) APP.state.view = h;
+    APP.render();
+    document.body.addEventListener("click", (ev) => {
+      const t = ev.target.closest("[data-go],[data-tab],[data-seg],[data-drawer],[data-act],[data-bruce],#fab,#bruce .x,#drawer .x");
+      if (!t) return;
+      if (t.id === "fab") return openBruce();
+      if (t.matches("#bruce .x")) return closeBruce();
+      if (t.matches("#drawer .x")) return drawer.close();
+      if (t.dataset.bruce) return openBruce(t.dataset.bruce);
+      if (t.dataset.go) { const tab = t.dataset.tabTo; return APP.go(t.dataset.go, tab); }
+      if (t.dataset.tab) { const [v, tab] = t.dataset.tab.split(":"); return APP.go(v, tab); }
+      if (t.dataset.drawer) { const [k, id] = t.dataset.drawer.split(":"); const fn = { pallet: APP.palletDrawer, event: APP.eventDrawer, asset: APP.assetDrawer }[k]; if (fn) drawer.open(k === "pallet" ? "Pallet " + id : k === "event" ? "Event at " + id : S.assets.find((a) => a.id === id).name, fn(id)); return; }
+      if (t.dataset.act) return act(t.dataset.act);
+    });
+    document.body.addEventListener("change", (ev) => {
+      const sel = ev.target.closest("[data-assign]"); if (sel && sel.value) { const w = S.workOrders.find((x) => x.id === sel.dataset.assign); w.tech = sel.value; w.col = "assigned"; toast(`${w.id} assigned to ${w.tech}`); APP.render(); }
+    });
+    document.body.addEventListener("input", (ev) => {
+      if (ev.target.id === "psearch") { APP.state.search = ev.target.value; const pos = ev.target.selectionStart; APP.render(); const el = document.getElementById("psearch"); el.focus(); el.setSelectionRange(pos, pos); }
+      if (ev.target.dataset.cip) { APP.state.cipIn = { ...(APP.state.cipIn || {}), [ev.target.dataset.cip]: parseFloat(ev.target.value) || 0 }; const active = ev.target.dataset.cip; APP.render(); const el = document.querySelector(`[data-cip="${active}"]`); if (el) { el.focus(); } }
+    });
+    document.querySelector("#bruce form").addEventListener("submit", (ev) => { ev.preventDefault(); const i = ev.target.querySelector("input"); if (i.value.trim()) ask(i.value.trim()); i.value = ""; });
+    document.getElementById("bruce").addEventListener("click", (ev) => { const b = ev.target.closest(".sug button"); if (b) ask(b.dataset.bruce); });
+    setInterval(() => { S.tick(); APP.live(); }, 2000);
+  }
+  function act(a) {
+    const [k, id] = a.split(":");
+    if (k === "confirm" || k === "dismiss") { APP.state.confirmed[id] = k === "confirm" ? "ok" : "no"; toast(k === "confirm" ? `${id} confirmed; added to the training set` : `${id} marked not a defect`); APP.render(); }
+    else if (k === "release" || k === "scrap" || k === "lotrelease") { toast(k === "lotrelease" ? `Lot ${id} released; posted to the ERP` : k === "release" ? `${id} released after the QA check` : `${id} sent to rework`); drawer.close(); }
+    else if (k === "wo") { const i = S.insights[+id]; const n = "WO-0" + (344 + S.workOrders.length - 7); S.workOrders.unshift({ id: n, title: i.act.replace("Create work order: ", ""), machine: i.title.includes("dasher") ? "FRZ1" : i.title.includes("Chain") ? "TL1" : "CO2", est: 60, col: "open", tech: "", src: "Bruce suggestion", pri: "High" }); toast(`${n} created from the insight`); APP.go("maint", "work"); }
+    else if (k === "wofrom") { const n = "WO-0" + (344 + S.workOrders.length - 7); S.workOrders.unshift({ id: n, title: "Follow-up on event " + id, machine: "", est: 30, col: "open", tech: "", src: "Event " + id, pri: "Medium" }); drawer.close(); toast(`${n} created`); APP.go("maint", "work"); }
+    else if (k === "start") { const w = S.workOrders.find((x) => x.id === id); w.col = "progress"; w.hours = 0.1; toast(`${id} started; the clock is running`); APP.render(); }
+    else if (k === "done") { const w = S.workOrders.find((x) => x.id === id); w.col = "done"; w.hours = (w.hours || 0.5) + 0.4; toast(`${id} closed; ${w.hours.toFixed(1)} h counted`); APP.render(); }
+    else if (k === "note") toast("Added to the shift handover for crew C");
+    else if (k === "autoplan") toast("Next week's plan drafted from the hour counters; 9 items, waiting for approval");
+    else if (k === "lotgo") toast("Traced L28-0314-A: 6 pallets, 1 on hold");
+  }
+  window.addEventListener("DOMContentLoaded", boot);
+})();
+
+</script>
+</body></html>
